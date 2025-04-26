@@ -1,0 +1,23 @@
+{
+  "navigation": {
+    "home": "მთავარი"
+  },
+  "hero": {
+    "title": "ისინი საჭიროებენ თქვენს დახმარებას სიცოცხლისთვის.",
+    "description": "ჩვენ ვეხმარებით კომპანიებს ძლიერი კორპორატიული სოციალური პასუხისმგებლობის, გრანტების გაცემის და თანამშრომლების ჩართულობის სტრატეგიების განვითარებაში. Dicta sunt."
+  },
+  "fundCards": {
+    "title": "განათლების ფონდი",
+    "description": "ქველმოქმედება და დონაცია არის კატეგორია, რომელიც მოიცავს"
+  },
+  "about": {
+    "title": "ჩვენს შესახებ",
+    "description": "Together We Can Make a Difference",
+    "bio": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim Ipsum has been the industry's standard dummy",
+    "listOne": "Uniting Hearts, Healing Communities",
+    "listTwo": "Support Charity Today",
+    "listThree": "Small Acts, Big Impact",
+    "button": "Donate Now",
+    "number": "(319) 555-0115"
+  }
+}

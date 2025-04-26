@@ -1,0 +1,23 @@
+{
+  "navigation": {
+    "home": "Home"
+  },
+  "hero": {
+    "title": "They Need Your Help to Live",
+    "description": "We help companies develop powerful corporate social responsibility, grantmaking, and employee engagement strategies. Dicta sunt "
+  },
+  "fundCards": {
+    "title": "Education Fund",
+    "description": "Charity and Donation is a category that involves"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Together We Can Make a Difference",
+    "bio": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim Ipsum has been the industry's standard dummy",
+    "listOne": "Uniting Hearts, Healing Communities",
+    "listTwo": "Support Charity Today",
+    "listThree": "Small Acts, Big Impact",
+    "button": "Donate Now",
+    "number": "(319) 555-0115"
+  }
+}

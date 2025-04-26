@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 // Define supported locales
-export const locales = ['en', 'ka'];
+export const locales = ['en', 'ge'];
 export const defaultLocale = 'en';
 
 // Simple function to get preferred locale
@@ -9,9 +9,9 @@ function getLocale(request) {
   // Get locale from Accept-Language header
   const acceptLanguage = request.headers.get('accept-language') || '';
 
-  // Check if Georgian is explicitly requested (checking for 'ka' in the header)
-  if (acceptLanguage.includes('ka')) {
-    return 'ka';
+  // Check if Georgian is explicitly requested (checking for 'ge' in the header)
+  if (acceptLanguage.includes('ge')) {
+    return 'ge';
   }
 
   // Default to English for all other cases
