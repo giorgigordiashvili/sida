@@ -1,0 +1,34 @@
+.header {
+    width: 100%;
+    height: 100px;
+}
+
+.container {
+    display: flex;
+    max-width: 1290px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.logo {
+    width: auto;
+    height: 100px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    gap: 68px;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    gap: 25px;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
