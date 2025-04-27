@@ -12,13 +12,25 @@ const StyledContainer = styled.div`
 
 const StyledCard = styled.div`
   margin-top: -130px;
-  background: rgba(59, 80, 163, 100);
   width: 410px;
   height: 236px;
   border-radius: 20px;
-  color: #333;
   padding: 30px;
   color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &:nth-child(1) {
+    background: rgba(59, 80, 163, 1);
+  }
+
+  &:nth-child(2) {
+    background: rgba(43, 182, 115, 1);
+  }
+
+  &:nth-child(3) {
+    background: rgba(226, 109, 90, 1);
+  }
 `;
 
 const StyledBio = styled.div`
@@ -42,8 +54,8 @@ const StyledTitle = styled.div`
   font-weight: 700;
   font-size: 20px;
   line-height: 34px;
-  letter-spacing: 0%;
 `;
+
 export default function FundCards({
   dictionary,
 }: {
@@ -57,8 +69,18 @@ export default function FundCards({
           <StyledDescription>{dictionary.description}</StyledDescription>
         </StyledBio>
       </StyledCard>
-      <StyledCard>{dictionary.title}</StyledCard>
-      <StyledCard>{dictionary.title}</StyledCard>
+      <StyledCard>
+        <StyledBio>
+          <StyledTitle>{dictionary.title}</StyledTitle>
+          <StyledDescription>{dictionary.description}</StyledDescription>
+        </StyledBio>
+      </StyledCard>
+      <StyledCard>
+        <StyledBio>
+          <StyledTitle>{dictionary.title}</StyledTitle>
+          <StyledDescription>{dictionary.description}</StyledDescription>
+        </StyledBio>
+      </StyledCard>
     </StyledContainer>
   );
 }

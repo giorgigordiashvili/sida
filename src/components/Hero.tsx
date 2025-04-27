@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 const Container = styled.div`
-  background-color: rgba(242 240 236);
   padding: 73px 0 189px 0;
   color: rgba(52, 52, 52, 1);
   max-width: 1290px;
@@ -39,7 +38,7 @@ const StyledTitle = styled.h1`
 `;
 
 const MainContainer = styled.div`
-  background-color: rgba(242 240 236);
+  background-color: rgba(255 243 240);
 `;
 
 const StyledImageBox = styled.div`
