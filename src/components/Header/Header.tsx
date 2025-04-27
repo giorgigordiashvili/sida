@@ -2,6 +2,7 @@ import DonateButton from '../DonateButton/DonateButton';
 import HeaderLink from '../HeaderLink/HeaderLink';
 import styles from './Header.module.scss';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 export default function Header() {
   return (
@@ -12,10 +13,19 @@ export default function Header() {
           alt="logo"
           width={0}
           height={0}
-          className={styles.logo}
+          className={clsx(styles.logo, styles.pc)}
         />
+
+        <Image
+          src="/assets/images/sidaLogoMobile.svg"
+          alt="logo"
+          width={0}
+          height={0}
+          className={clsx(styles.logo, styles.mobile)}
+        />
+
         <div className={styles.content}>
-          <div className={styles.links}>
+          <div className={clsx(styles.links, styles.pc)}>
             <HeaderLink title="Home" href="/" />
             <HeaderLink title="About Us" href="/" />
             <HeaderLink title="Services" href="/" />
@@ -31,6 +41,15 @@ export default function Header() {
               height={20}
               alt="user"
               style={{ cursor: 'pointer' }}
+              className={styles.user}
+            />
+            <Image
+              src="/assets/icons/menuIcon.svg"
+              width={23.1}
+              height={16.5}
+              alt="loop"
+              style={{ cursor: 'pointer' }}
+              className={clsx(styles.menuIcon, styles.mobile)}
             />
             <Image
               src="/assets/icons/loop.svg"
@@ -38,6 +57,7 @@ export default function Header() {
               height={20}
               alt="loop"
               style={{ cursor: 'pointer' }}
+              className={styles.loop}
             />
             <DonateButton />
           </div>

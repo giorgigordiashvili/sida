@@ -19,3 +19,25 @@
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
+
+@media (max-width: 1080px) {
+  .button {
+    width: 71.5px;
+    height: 23.49px;
+    gap: 5.24px;
+  }
+
+  .button p {
+    font-weight: 700;
+    font-size: 6.13px;
+    letter-spacing: 0.41px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+
+  .arrow {
+    width: 6px;
+    height: 6px;
+  }
+}
