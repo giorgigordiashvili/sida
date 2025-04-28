@@ -19,8 +19,7 @@ html {
 
 body {
   font-family: 'Helvetica', sans-serif;
-  background: #0a0a08;
-  color: #fff;
+  background-color: rgba(249 249 247);
 }
 
 /* 1. Use a more-intuitive box-sizing model */

@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 // Define supported locales
-const locales = ['en', 'ka'];
+const locales = ['en', 'ge'];
 const defaultLocale = 'en';
 
 // Get the preferred locale from request headers
