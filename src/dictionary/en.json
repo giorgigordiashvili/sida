@@ -1,4 +1,14 @@
 {
+  "header": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "blog": "Blog",
+    "page": "Page",
+    "contact": "Contact Us"
+  },
+
   "navigation": {
     "home": "Home"
   },

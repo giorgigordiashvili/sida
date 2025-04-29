@@ -1,6 +1,8 @@
 import { i18n, type Locale } from '@/i18n-config';
 import StyledComponentsRegistry from '@/lib/registry';
 import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata = {
   title: 'i18n within app router - Vercel Examples',
@@ -19,10 +21,18 @@ export default async function Root(props: {
 
   const { children } = props;
 
+  // Assuming dictionary is imported or defined based on the selected language
+  const dictionary = await import(`@/dictionary/${params.lang}`).then((mod) => mod.default);
+
   return (
     <html lang={params.lang}>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Header dictionary={dictionary.header} />
+
+          {children}
+          <Footer />
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
