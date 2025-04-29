@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import DonateButton from './DonateButton';
-import HeaderLink from './HeaderLink/HeaderLink';
+import HeaderLink from './HeaderLink';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { getDictionary } from '@/get-dictionary';
@@ -12,6 +12,10 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1080px) {
+    height: 63px;
+  }
 `;
 
 const StyledContainer = styled.div`
@@ -20,6 +24,13 @@ const StyledContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 0 10px;
+
+  @media (max-width: 1080px) {
+    padding: 0 16px;
+    height: 63px;
+    align-items: center;
+    gap: 33.96px;
+  }
 `;
 
 const StyledLogo = styled.div`
@@ -27,6 +38,11 @@ const StyledLogo = styled.div`
   width: 143.4px;
   height: 53.63px;
   display: flex;
+
+  @media (max-width: 1080px) {
+    width: 64.86px;
+    height: 22px;
+  }
 `;
 
 const StyledContent = styled.div`
@@ -44,6 +60,10 @@ const StyledNavigation = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
+
+  @media (max-width: 1080px) {
+    gap: 33.96px;
+  }
 `;
 
 export default function Header({
