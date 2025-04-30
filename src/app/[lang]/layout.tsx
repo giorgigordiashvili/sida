@@ -1,8 +1,8 @@
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import { i18n, type Locale } from '@/i18n-config';
 import StyledComponentsRegistry from '@/lib/registry';
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'i18n within app router - Vercel Examples',
@@ -31,7 +31,7 @@ export default async function Root(props: {
           <Header dictionary={dictionary.header} />
 
           {children}
-          <Footer />
+          <Footer dictionary={dictionary.footer} />
         </StyledComponentsRegistry>
       </body>
     </html>

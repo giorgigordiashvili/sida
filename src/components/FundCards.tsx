@@ -1,6 +1,7 @@
 'use client';
 import styled from 'styled-components';
 import { getDictionary } from '@/get-dictionary';
+import Typography from './ui/Typography';
 
 const StyledContainer = styled.div`
   display: grid;
@@ -41,21 +42,6 @@ const StyledBio = styled.div`
   justify-self: right;
 `;
 
-const StyledDescription = styled.div`
-  font-family: DM Sans;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 34px;
-  letter-spacing: 0%;
-`;
-
-const StyledTitle = styled.div`
-  font-family: Josefin Sans;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 34px;
-`;
-
 export default function FundCards({
   dictionary,
 }: {
@@ -65,20 +51,20 @@ export default function FundCards({
     <StyledContainer>
       <StyledCard>
         <StyledBio>
-          <StyledTitle>{dictionary.title}</StyledTitle>
-          <StyledDescription>{dictionary.description}</StyledDescription>
+          <Typography variant="lBodytext">{dictionary.title}</Typography>
+          <Typography variant="sBodytext">{dictionary.description}</Typography>
         </StyledBio>
       </StyledCard>
       <StyledCard>
         <StyledBio>
-          <StyledTitle>{dictionary.title}</StyledTitle>
-          <StyledDescription>{dictionary.description}</StyledDescription>
+          <Typography variant="lBodytext">{dictionary.title}</Typography>
+          <Typography variant="sBodytext">{dictionary.description}</Typography>
         </StyledBio>
       </StyledCard>
       <StyledCard>
         <StyledBio>
-          <StyledTitle>{dictionary.title}</StyledTitle>
-          <StyledDescription>{dictionary.description}</StyledDescription>
+          <Typography variant="lBodytext">{dictionary.title}</Typography>
+          <Typography variant="sBodytext">{dictionary.description}</Typography>
         </StyledBio>
       </StyledCard>
     </StyledContainer>
