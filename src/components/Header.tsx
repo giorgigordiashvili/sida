@@ -4,7 +4,9 @@ import DonateButton from './DonateButton';
 import HeaderLink from './HeaderLink';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { usePathname, useRouter } from 'next/navigation';
 import { getDictionary } from '@/get-dictionary';
+import { Locale } from '@/i18n-config';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -38,10 +40,10 @@ const StyledLogo = styled.div`
   width: 143.4px;
   height: 53.63px;
   display: flex;
+  cursor: pointer;
 
   @media (max-width: 1080px) {
     width: 64.86px;
-    height: 22px;
   }
 `;
 
@@ -54,6 +56,10 @@ const StyledContent = styled.div`
 const StyledLinks = styled.div`
   display: flex;
   gap: 25px;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const StyledNavigation = styled.div`
@@ -64,6 +70,12 @@ const StyledNavigation = styled.div`
   @media (max-width: 1080px) {
     gap: 33.96px;
   }
+
+  @media (min-width: 1080px) {
+    & > img:nth-child(2) {
+      display: none;
+    }
+  }
 `;
 
 export default function Header({
@@ -71,6 +83,18 @@ export default function Header({
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['header'];
 }) {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const currentLocale = pathname.split('/')[1] as Locale;
+  const alternateLocale: Locale = currentLocale === 'en' ? 'ge' : 'en';
+  const pathWithoutLocale = pathname.replace(`/${currentLocale}`, '') || '/';
+  const newPath = `/${alternateLocale}${pathWithoutLocale}`;
+
+  const handleLanguageSwitch = () => {
+    router.push(newPath);
+  };
+
   return (
     <StyledHeader>
       <StyledContainer>
@@ -89,17 +113,22 @@ export default function Header({
           </StyledLinks>
           <StyledNavigation>
             <Image
-              src="/assets/icons/user.svg"
-              width={18}
-              height={20}
-              alt="user"
+              src={
+                currentLocale === 'en'
+                  ? '/assets/icons/languageGe.svg'
+                  : '/assets/icons/languageUk.svg'
+              }
+              width={26}
+              height={26}
+              alt="language switch"
+              onClick={handleLanguageSwitch}
               style={{ cursor: 'pointer' }}
             />
             <Image
               src="/assets/icons/menuIcon.svg"
               width={23.1}
               height={16.5}
-              alt="loop"
+              alt="menu"
               style={{ cursor: 'pointer' }}
             />
             <Image
