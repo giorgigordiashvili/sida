@@ -9,6 +9,28 @@
     "contact": "Contact Us"
   },
 
+  "footer": {
+    "donateTitle": "Donate To Change The World",
+    "donateDescription": "category that involves giving financial or to a materialt support various causes organizations It allows not",
+    "servicesTitle": "Services",
+    "service1": "Incident Responder",
+    "service2": "Secure Managed Fund",
+    "service3": "Clean Water All",
+    "service4": "Give Education",
+    "linksTitle": "Links",
+    "link1": "Food to individuals",
+    "link2": "Temporary housing",
+    "link3": "Local shelters",
+    "link4": "Natural disasters",
+    "contactTitle": "Contact Info",
+    "phone": "+088 (246) 642-27-10",
+    "email": "example@mail.com",
+    "copyright": "© Sida 2024 | All Rights Reserved",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiesSettings": "Cookies Settings"
+  },
+
   "navigation": {
     "home": "Home"
   },
