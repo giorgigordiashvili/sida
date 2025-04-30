@@ -3,6 +3,8 @@ import { getDictionary } from '@/get-dictionary';
 import styled from 'styled-components';
 import Image from 'next/image';
 import DonateButton from '@/components/DonateButton';
+import Typography from './ui/Typography';
+import Help from './Help';
 
 const Container = styled.div`
   padding: 73px 0 189px 0;
@@ -21,26 +23,6 @@ const StyledBioContainer = styled.div`
   gap: 30px;
 `;
 
-const StyledText = styled.h2`
-  color: rgba(52, 52, 52, 1);
-  font-family: Josefin Sans;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 60px;
-  letter-spacing: 0%;
-`;
-
-const StyledTitle = styled.div`
-  text-align: left;
-  text-transform: uppercase;
-  color: rgba(226, 109, 90, 1);
-  font-family: DM Sans;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 1.6px;
-`;
-
 const MainContainer = styled.div`
   background-color: rgba(249, 249, 247, 1);
 `;
@@ -50,19 +32,6 @@ const StyledImageBox = styled.div`
   width: 571px;
   height: 571px;
   background: transparent;
-`;
-
-const StyledHelp = styled.div`
-  display: flex;
-  margin-top: 10px;
-  gap: 40px;
-`;
-
-const StyledBio = styled.div`
-  color: rgba(77, 77, 77, 1);
-  font-family: DM Sans;
-  font-size: 16px;
-  line-height: 26px;
 `;
 
 const StyledList = styled.ul`
@@ -86,18 +55,20 @@ const CheckmarkContainer = styled.div`
 const ListItemText = styled.div`
   flex: 1;
   font-family: DM Sans;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 30px;
 `;
 
-const DonateContact = styled.div`
-  display: flex;
-  gap: 15px;
-`;
-
-const StyledContact = styled.div`
+const StyledTitle = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
+`;
+
+const StyledHelp = styled.div`
+  display: flex;
+  margin-top: 10px;
+  gap: 40px;
 `;
 export default function AboutUs({
   dictionary,
@@ -120,10 +91,11 @@ export default function AboutUs({
           />
         </StyledImageBox>
         <StyledBioContainer>
-          <StyledTitle>{dictionary.title}</StyledTitle>
-          <StyledText>{dictionary.description}</StyledText>
-          <StyledBio>{dictionary.bio}</StyledBio>
-
+          <StyledTitle>
+            <Typography variant="sBodytext">{dictionary.title}</Typography>
+            <Typography variant="h2">{dictionary.description}</Typography>
+          </StyledTitle>
+          <Typography variant="sBodytext">{dictionary.bio}</Typography>
           <StyledList>
             {listItems.map((item, index) => (
               <ListItem key={index}>
@@ -142,13 +114,7 @@ export default function AboutUs({
 
           <StyledHelp>
             <DonateButton />
-            <DonateContact>
-              <Image src="/assets/images/hero/phone.svg" alt="Phone" width={46} height={46} />
-              <StyledContact>
-                <span>{dictionary.help}</span>
-                <span>{dictionary.number}</span>
-              </StyledContact>
-            </DonateContact>
+            <Help dictionary={dictionary}></Help>
           </StyledHelp>
         </StyledBioContainer>
       </Container>

@@ -2,6 +2,7 @@
 import { getDictionary } from '@/get-dictionary';
 import styled from 'styled-components';
 import Image from 'next/image';
+import Typography from './ui/Typography';
 
 const Container = styled.div`
   padding: 73px 0 189px 0;
@@ -18,23 +19,6 @@ const StyledBio = styled.div`
   flex-direction: column;
   width: 571px;
   gap: 27px;
-`;
-
-const StyledText = styled.div`
-  font-family: DM Sans;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 34px;
-  color: rgba(52, 52, 52, 1);
-`;
-
-const StyledTitle = styled.h1`
-  font-size: 100px;
-  line-height: 90px;
-  text-align: left;
-  font-weight: 700;
-  color: rgba(52, 52, 52, 1);
-  font-family: Josefin Sans;
 `;
 
 const MainContainer = styled.div`
@@ -57,8 +41,8 @@ export default function Hero({
     <MainContainer>
       <Container>
         <StyledBio>
-          <StyledTitle>{dictionary.title}</StyledTitle>
-          <StyledText>{dictionary.description}</StyledText>
+          <Typography variant="h1">{dictionary.title}</Typography>
+          <Typography variant="sBodytext">{dictionary.description}</Typography>
         </StyledBio>
         <StyledImageBox>
           <Image

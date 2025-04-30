@@ -10,7 +10,8 @@
       color: rgba(255, 85, 40, 1);
     }
     .arrow {
-      filter: invert(45%) sepia(100%) saturate(7000%) hue-rotate(10deg) brightness(150%) contrast(85%);
+      filter: invert(45%) sepia(100%) saturate(7000%) hue-rotate(10deg) brightness(150%)
+        contrast(85%);
     }
   }
 }
