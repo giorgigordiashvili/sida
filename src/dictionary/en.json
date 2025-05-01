@@ -9,6 +9,32 @@
     "contact": "Contact Us"
   },
 
+  "members": {
+    "teamMembers": "TEAM MEMBERS",
+    "title": "Building Futures with Your Support",
+    "text": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim Ipsum has been the industry's standard dummy",
+    "member": {
+      "name": "Cody Fisher",
+      "job": "Boys Trainer",
+      "facebook": "/",
+      "instagram": "/",
+      "twitter": "/",
+      "linkedIn": "/"
+    },
+    "stats": {
+      "teamMember": "Team Member",
+      "memberNumber": "40,000+",
+      "totalDonated": "Total Donated",
+      "donatedNumber": "$50,993+",
+      "fund": "Total Fund Rised",
+      "fundNumber": "44,4271"
+    }
+  },
+
+  "joinUs": {
+    "text": "Join Us in the Fight Against Poverty Support"
+  },
+
   "footer": {
     "donateTitle": "Donate To Change The World",
     "donateDescription": "category that involves giving financial or to a materialt support various causes organizations It allows not",
@@ -29,6 +55,11 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "cookiesSettings": "Cookies Settings"
+  },
+
+  "newsCard": {
+    "title": "Empowering Communities Through Your Generosity",
+    "text": "Charity and Donation is a category that involves giving financial"
   },
 
   "navigation": {

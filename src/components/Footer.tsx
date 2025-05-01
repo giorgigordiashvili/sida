@@ -19,9 +19,11 @@ const StyledFooter = styled.footer`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin-top: 120px;
 
   @media (max-width: 1080px) {
-    height: 332px;
+    height: 386px;
+    margin-top: 60px;
   }
 `;
 
@@ -35,7 +37,8 @@ const StyledContainer = styled.div`
 
   @media (max-width: 1080px) {
     padding: 0;
-    padding-top: 24px;
+    gap: 0;
+    justify-content: start;
   }
 `;
 
@@ -46,7 +49,7 @@ const StyledTop = styled.div`
   gap: 61.49px;
   @media (max-width: 1080px) {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
 `;
 
@@ -79,7 +82,9 @@ const StyledLogo = styled(Image)`
   cursor: pointer;
 
   @media (max-width: 1080px) {
-    width: 64px;
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
   }
 `;
 
@@ -139,8 +144,9 @@ const StyledServicesLinks = styled.div`
     padding: 0;
     gap: 36px;
     justify-content: space-between;
+    margin-top: 10px;
     max-width: 328px;
-    width: 100%;
+    width: 100.1%;
   }
 `;
 
@@ -164,6 +170,7 @@ const StyledServices = styled.div`
       vertical-align: middle;
       text-transform: capitalize;
       text-align: center;
+      width: 108px;
     }
   }
 
@@ -292,13 +299,13 @@ const StyledMedia = styled.div`
   align-items: center;
 
   @media (max-width: 1080px) {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 5px;
 
     img {
-      width: 6px;
-      height: 8px;
+      width: auto;
+      height: 13px;
     }
   }
 `;
@@ -318,7 +325,7 @@ const StyledBottom = styled.div`
     padding: 0;
     border: 0;
     flex-direction: column;
-    padding-bottom: 10px;
+    margin: auto;
   }
 `;
 
@@ -326,6 +333,10 @@ const StyledFooterLinks = styled.div`
   display: flex;
   gap: 20px;
   opacity: 0.8;
+
+  @media (max-width: 1080px) {
+    gap: 10px;
+  }
 `;
 
 const StyledFooterLink = styled(Link)`
@@ -336,7 +347,6 @@ const StyledFooterLink = styled(Link)`
   text-decoration: none;
   color: rgba(255, 255, 255, 1);
   vertical-align: middle;
-
   @media (max-width: 1080px) {
     font-family: Work Sans;
     font-weight: 400;
@@ -362,6 +372,17 @@ const StyledBottomText = styled.div`
     line-height: 16.25px;
     letter-spacing: 0%;
     vertical-align: middle;
+    order: 1;
+  }
+`;
+
+const StyledLine = styled.div`
+  display: none;
+  @media (max-width: 1080px) {
+    display: flex;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(43, 182, 115, 1);
   }
 `;
 
@@ -398,7 +419,7 @@ export default function Footer({
                 <li>{dictionary.service4}</li>
               </ul>
             </StyledServices>
-
+            <StyledLine />
             <StyledServices>
               <h2>{dictionary.linksTitle}</h2>
               <ul>
