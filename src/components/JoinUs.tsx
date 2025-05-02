@@ -31,7 +31,7 @@ const StyledContainer = styled.div`
 export default function JoinUs({
   dictionary,
 }: {
-  dictionary: Awaited<ReturnType<typeof getDictionary>>['members'];
+  dictionary: Awaited<ReturnType<typeof getDictionary>>['joinUs'];
 }) {
   return (
     <StyledContainer>
