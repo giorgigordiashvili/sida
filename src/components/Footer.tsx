@@ -5,6 +5,12 @@ import Image from 'next/image';
 import DonateButton from './DonateButton';
 import Link from 'next/link';
 import styled from 'styled-components';
+import Phone from '../../public/assets/icons/Phone';
+import Mail from '../../public/assets/icons/Mail';
+
+const StyledButtonWrapper = styled.div`
+  max-width: fit-content;
+`;
 
 const StyledFooter = styled.footer`
   background-image: url('/assets/images/footerBackground.png');
@@ -13,6 +19,10 @@ const StyledFooter = styled.footer`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media (max-width: 1080px) {
+    height: 332px;
+  }
 `;
 
 const StyledContainer = styled.div`
@@ -20,7 +30,13 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
   height: 100%;
+
+  @media (max-width: 1080px) {
+    padding: 0;
+    padding-top: 24px;
+  }
 `;
 
 const StyledTop = styled.div`
@@ -28,6 +44,10 @@ const StyledTop = styled.div`
   justify-content: center;
   align-items: center;
   gap: 61.49px;
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 const StyledLeftLine = styled.div`
@@ -35,6 +55,10 @@ const StyledLeftLine = styled.div`
   max-width: 520px;
   background-color: rgba(43, 182, 115, 1);
   width: 100%;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const StyledRightLine = styled.div`
@@ -42,18 +66,34 @@ const StyledRightLine = styled.div`
   max-width: 520px;
   width: 100%;
   background-color: rgba(43, 182, 115, 1);
+
+  @media (max-width: 1080px) {
+    width: calc(100% - 32px);
+    max-width: none;
+  }
 `;
 
 const StyledLogo = styled(Image)`
   width: auto;
   height: 40px;
   cursor: pointer;
+
+  @media (max-width: 1080px) {
+    width: 64px;
+  }
 `;
 
 const StyledCenter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    border-bottom: 1px solid rgba(43, 182, 115, 1);
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
 `;
 
 const StyledDonate = styled.div`
@@ -63,12 +103,17 @@ const StyledDonate = styled.div`
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 1080px) {
+    display: none;
+  }
+
   h1 {
     font-family: 'Josefin Sans';
     font-weight: 700;
     font-size: 50px;
     line-height: 60px;
     letter-spacing: 0;
+    color: rgba(255, 255, 255, 1);
   }
 `;
 
@@ -88,6 +133,15 @@ const StyledServicesLinks = styled.div`
   gap: 76px;
   width: fit-content;
   padding-left: 30px;
+
+  @media (max-width: 1080px) {
+    order: 2;
+    padding: 0;
+    gap: 36px;
+    justify-content: space-between;
+    max-width: 328px;
+    width: 100%;
+  }
 `;
 
 const StyledServices = styled.div`
@@ -97,6 +151,20 @@ const StyledServices = styled.div`
     font-size: 20px;
     line-height: 34px;
     padding-bottom: 30px;
+    color: rgba(255, 255, 255, 1);
+
+    @media (max-width: 1080px) {
+      padding-bottom: 10px;
+      font-family: Jost;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      text-transform: capitalize;
+      text-align: center;
+    }
   }
 
   ul {
@@ -104,6 +172,14 @@ const StyledServices = styled.div`
     flex-direction: column;
     gap: 15px;
     opacity: 0.8;
+    padding: 0;
+
+    @media (max-width: 1080px) {
+      gap: 5px;
+      padding: 0;
+      text-align: center;
+      padding-bottom: 10px;
+    }
   }
 
   ul li {
@@ -111,11 +187,29 @@ const StyledServices = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 34px;
+    color: rgba(255, 255, 255, 1);
+    list-style-type: none;
+  }
+
+  @media (max-width: 1080px) {
+    ul li {
+      font-family: Work Sans;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 17px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
   }
 `;
 
 const StyledContact = styled.div`
   margin-left: 137px;
+
+  @media (max-width: 1080px) {
+    margin-left: 0;
+    text-align: center;
+  }
 
   h2 {
     font-family: 'Josefin Sans';
@@ -123,6 +217,11 @@ const StyledContact = styled.div`
     font-size: 20px;
     line-height: 34px;
     padding-bottom: 30px;
+    color: rgba(255, 255, 255, 1);
+
+    @media (max-width: 1080px) {
+      display: none;
+    }
   }
 `;
 
@@ -130,12 +229,23 @@ const StyledContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: 1080px) {
+    order: 2;
+    padding-top: 10px;
+    gap: 10px;
+  }
 `;
 
 const StyledPhoneMail = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  gap: 5px;
+
+  &:first-child {
+    order: 1;
+  }
 
   p {
     font-family: 'Josefin Sans';
@@ -143,6 +253,19 @@ const StyledPhoneMail = styled.div`
     font-size: 18px;
     line-height: 30px;
     vertical-align: middle;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  @media (max-width: 1080px) {
+    justify-content: center;
+    p {
+      font-family: Jost;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 14.11px;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
   }
 `;
 
@@ -150,6 +273,12 @@ const StyledSocialMedia = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 30px;
+
+  @media (max-width: 1080px) {
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+  }
 `;
 
 const StyledMedia = styled.div`
@@ -161,6 +290,17 @@ const StyledMedia = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1080px) {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+
+    img {
+      width: 6px;
+      height: 8px;
+    }
+  }
 `;
 
 const StyledBottom = styled.div`
@@ -173,6 +313,13 @@ const StyledBottom = styled.div`
   padding-top: 20px;
   padding-bottom: 30px;
   align-self: center;
+
+  @media (max-width: 1080px) {
+    padding: 0;
+    border: 0;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
 `;
 
 const StyledFooterLinks = styled.div`
@@ -189,6 +336,15 @@ const StyledFooterLink = styled(Link)`
   text-decoration: none;
   color: rgba(255, 255, 255, 1);
   vertical-align: middle;
+
+  @media (max-width: 1080px) {
+    font-family: Work Sans;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16.25px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
 `;
 
 const StyledBottomText = styled.div`
@@ -197,6 +353,16 @@ const StyledBottomText = styled.div`
   font-size: 16px;
   line-height: 34px;
   opacity: 0.7;
+  color: rgba(255, 255, 255, 1);
+
+  @media (max-width: 1080px) {
+    font-family: Work Sans;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16.25px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+  }
 `;
 
 export default function Footer({
@@ -209,7 +375,7 @@ export default function Footer({
       <StyledContainer>
         <StyledTop>
           <StyledLeftLine />
-          <StyledLogo src="/assets/images/sidaLogo.svg" alt="logo" width={0} height={0} />
+          <StyledLogo src="/assets/images/footerLogo.svg" alt="logo" width={0} height={0} />
           <StyledRightLine />
         </StyledTop>
 
@@ -217,7 +383,9 @@ export default function Footer({
           <StyledDonate>
             <h1>{dictionary.donateTitle}</h1>
             <StyledDonateText>{dictionary.donateDescription}</StyledDonateText>
-            <DonateButton />
+            <StyledButtonWrapper>
+              <DonateButton />
+            </StyledButtonWrapper>
           </StyledDonate>
 
           <StyledServicesLinks>
@@ -246,11 +414,11 @@ export default function Footer({
             <h2>{dictionary.contactTitle}</h2>
             <StyledContactInfo>
               <StyledPhoneMail>
-                <Image src="/assets/icons/phone.svg" width={16} height={16} alt="phone" />
+                <Phone />
                 <p>{dictionary.phone}</p>
               </StyledPhoneMail>
               <StyledPhoneMail>
-                <Image src="/assets/icons/mail.svg" width={18.77} height={12.85} alt="mail" />
+                <Mail />
                 <p>{dictionary.email}</p>
               </StyledPhoneMail>
             </StyledContactInfo>
