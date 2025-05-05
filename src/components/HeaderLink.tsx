@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import ArrowDown from '../../public/assets/icons/ArrowDown';
 
 type Props = {
   title: string;
@@ -18,10 +17,6 @@ const StyledHeaderLink = styled.div`
     :nth-child(1) {
       color: rgba(43, 182, 115, 1);
     }
-
-    img {
-      filter: invert(44%) sepia(56%) saturate(420%) hue-rotate(100deg) brightness(90%) contrast(85%);
-    }
   }
 `;
 
@@ -34,7 +29,6 @@ export default function HeaderLink(props: Props) {
   return (
     <StyledHeaderLink>
       <StyledLink href={props.href || '/'}>{props.title} </StyledLink>
-      <ArrowDown />
     </StyledHeaderLink>
   );
 }
