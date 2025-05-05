@@ -59,7 +59,10 @@
 
   "newsCard": {
     "title": "Empowering Communities Through Your Generosity",
-    "text": "Charity and Donation is a category that involves giving financial"
+    "text": "Charity and Donation is a category that involves giving financial",
+    "readMore": "Read More",
+    "admin": "admin",
+    "comments": "comments"
   },
 
   "navigation": {

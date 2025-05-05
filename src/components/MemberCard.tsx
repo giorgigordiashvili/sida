@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import Typography from './ui/Typography';
+import Links from '../../public/assets/icons/Links';
 
 type Props = {
   name: string;
@@ -34,7 +35,7 @@ const StyledInfo = styled.div`
   align-items: center;
 `;
 
-const StyledLinkImage = styled.div`
+const StyledLinkImage = styled.div<{ $isActive: boolean }>`
   width: 40px;
   height: 40px;
   border: 1px solid rgba(43, 182, 115, 1);
@@ -43,6 +44,8 @@ const StyledLinkImage = styled.div`
   align-items: center;
   border-radius: 5px;
   cursor: pointer;
+  background-color: ${(props) => (props.$isActive ? 'rgba(43, 182, 115, 1)' : 'transparent')};
+  transition: background-color 0.3s ease;
 `;
 
 const StyledDropdown = styled.div`
@@ -110,8 +113,8 @@ export default function MemberCard(props: Props) {
               </div>
             ))}
           </StyledLinks>
-          <StyledLinkImage onClick={toggleDropdown}>
-            <Image src="/assets/icons/links.svg" width={14} height={15} alt="links" />
+          <StyledLinkImage $isActive={isDropdownVisible} onClick={toggleDropdown}>
+            <Links color={isDropdownVisible ? 'white' : '#2BB673'} />
           </StyledLinkImage>
         </StyledDropdown>
       </StyledInfo>

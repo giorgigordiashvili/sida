@@ -10,7 +10,27 @@ export default function NewsArticles({
 }) {
   return (
     <div>
-      <NewsCard />
+      <NewsCard
+        title={dictionary.title}
+        text={dictionary.text}
+        readMore={dictionary.readMore}
+        admin={dictionary.admin}
+        comment={dictionary.comments}
+      />
+      <NewsCard
+        title={dictionary.title}
+        text={dictionary.text}
+        readMore={dictionary.readMore}
+        admin={dictionary.admin}
+        comment={dictionary.comments}
+      />
+      <NewsCard
+        title={dictionary.title}
+        text={dictionary.text}
+        readMore={dictionary.readMore}
+        admin={dictionary.admin}
+        comment={dictionary.comments}
+      />
       <Typography variant="h1">{dictionary.text}</Typography>
     </div>
   );
