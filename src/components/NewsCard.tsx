@@ -13,17 +13,37 @@ const StyledCard = styled.div`
   align-items: center;
   box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.05);
   padding: 20px;
+  background-color: #fff;
+
+  @media (max-width: 1080px) {
+    width: 252px;
+    height: 300px;
+    padding: 20px 15px;
+    gap: 6.67px;
+  }
 `;
 
 const StyledImage = styled.div`
   img {
     object-fit: cover;
     border-radius: 20px;
+
+    @media (max-width: 1080px) {
+      width: 222px;
+      height: 142px;
+      border-radius: 20px;
+    }
   }
 `;
 
 const StyledContent = styled.div`
-  padding: 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  @media screen {
+    gap: 6.67px;
+  }
 `;
 
 const StyledLinks = styled.div`
@@ -32,11 +52,24 @@ const StyledLinks = styled.div`
   gap: 32px;
   font-family: Work Sans;
 
+  @media (max-width: 1080px) {
+    gap: 20px;
+  }
+
   p {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
+
+    @media (max-width: 1080px) {
+      font-family: Work Sans;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 25.04px;
+      letter-spacing: 0%;
+      gap: 4px;
+    }
   }
 `;
 
@@ -45,9 +78,24 @@ const StyledTexts = styled.div`
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
+  font-family: Jost;
 
   :nth-child(2) {
     color: rgba(77, 77, 77, 1);
+  }
+
+  @media (max-width: 1080px) {
+    margin-top: 0;
+
+    :nth-child(1) {
+      font-size: 18px;
+      line-height: 100%;
+      text-transform: capitalize;
+    }
+
+    :nth-child(2) {
+      display: none;
+    }
   }
 `;
 const StyledReadMore = styled.div`
@@ -55,7 +103,21 @@ const StyledReadMore = styled.div`
   gap: 20px;
   align-items: center;
   cursor: pointer;
-  margin-top: 40px;
+
+  @media (max-width: 1080px) {
+    font-family: Work Sans;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 21.95px;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    gap: 10px;
+
+    img {
+      width: 12px;
+      height: 13px;
+    }
+  }
 `;
 
 type Props = {

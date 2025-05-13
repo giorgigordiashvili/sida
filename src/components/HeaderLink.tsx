@@ -15,7 +15,7 @@ const StyledHeaderLink = styled.div`
 
   &:hover {
     :nth-child(1) {
-      color: rgba(43, 182, 115, 1);
+      color: rgba(193, 76, 59, 1);
     }
   }
 `;

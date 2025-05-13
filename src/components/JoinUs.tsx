@@ -26,6 +26,27 @@ const StyledContainer = styled.div`
     height: 119.75px;
     color: rgba(255, 255, 255, 1);
   }
+
+  @media (max-width: 1080px) {
+    width: fit-content;
+    height: fit-content;
+    gap: 20px;
+    padding: 30px;
+    margin-top: 30px;
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+`;
+
+const StyledDiv = styled.div`
+  padding: 0 10px;
+  @media (max-width: 1080px) {
+    padding: 0 35px;
+  }
 `;
 
 export default function JoinUs({
@@ -34,9 +55,11 @@ export default function JoinUs({
   dictionary: Awaited<ReturnType<typeof getDictionary>>['joinUs'];
 }) {
   return (
-    <StyledContainer>
-      <Typography variant="h2">{dictionary.text}</Typography>
-      <DonateButton />
-    </StyledContainer>
+    <StyledDiv>
+      <StyledContainer>
+        <Typography variant="h2">{dictionary.text}</Typography>
+        <DonateButton text1={dictionary.donateNow.text1} text2={dictionary.donateNow.text2} />
+      </StyledContainer>
+    </StyledDiv>
   );
 }

@@ -6,7 +6,30 @@
     "projects": "Projects",
     "blog": "Blog",
     "page": "Page",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "donateNow": {
+      "text1": "Donate",
+      "text2": "Now"
+    }
+  },
+
+  "causes": {
+    "featured": "Featured Causes",
+    "Popular": "Popular Causes Now",
+    "btn": "DISCOVER MORE",
+    "cardContent": {
+      "title": "Children Cancer Help Fund",
+      "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit asuraut",
+      "raisedText": "raised:",
+      "goalText": "goal:",
+      "goal": 9090,
+      "raised": 5090
+    }
+  },
+
+  "talkingAboutUs": {
+    "title": "About Us",
+    "text": "What They are Talking About Us "
   },
 
   "members": {
@@ -31,8 +54,34 @@
     }
   },
 
+  "newsCard": {
+    "news": "NEWS AND BLOGS",
+    "recent": "Recent News And Articles",
+    "readMore": "Read More",
+    "admin": "admin",
+    "comments": "comments",
+    "cards": [
+      {
+        "title": "Empowering Communities Through Your Generosity",
+        "text": "Charity and Donation is a category that involves giving financial"
+      },
+      {
+        "title": "Transforming Lives, One Donation at a Time",
+        "text": "Charity and Donation is a category that involves giving financial"
+      },
+      {
+        "title": "Spreading Hope One Act of Kindness at a Time",
+        "text": "Charity and Donation is a category that involves giving financial"
+      }
+    ]
+  },
+
   "joinUs": {
-    "text": "Join Us in the Fight Against Poverty Support"
+    "text": "Join Us in the Fight Against Poverty Support",
+    "donateNow": {
+      "text1": "Donate",
+      "text2": "Now"
+    }
   },
 
   "footer": {
@@ -54,15 +103,11 @@
     "copyright": "© Sida 2024 | All Rights Reserved",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "cookiesSettings": "Cookies Settings"
-  },
-
-  "newsCard": {
-    "title": "Empowering Communities Through Your Generosity",
-    "text": "Charity and Donation is a category that involves giving financial",
-    "readMore": "Read More",
-    "admin": "admin",
-    "comments": "comments"
+    "cookiesSettings": "Cookies Settings",
+    "donateNow": {
+      "text1": "Donate",
+      "text2": "Now"
+    }
   },
 
   "navigation": {

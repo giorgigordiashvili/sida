@@ -24,6 +24,7 @@ const StyledFooter = styled.footer`
   @media (max-width: 1080px) {
     height: 386px;
     margin-top: 60px;
+    background-clip: border-box;
   }
 `;
 
@@ -316,9 +317,9 @@ const StyledBottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(43, 182, 115, 1);
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   align-self: center;
 
   @media (max-width: 1080px) {
@@ -405,7 +406,7 @@ export default function Footer({
             <h1>{dictionary.donateTitle}</h1>
             <StyledDonateText>{dictionary.donateDescription}</StyledDonateText>
             <StyledButtonWrapper>
-              <DonateButton />
+              <DonateButton text1={dictionary.donateNow.text1} text2={dictionary.donateNow.text2} />
             </StyledButtonWrapper>
           </StyledDonate>
 
@@ -452,9 +453,6 @@ export default function Footer({
               </StyledMedia>
               <StyledMedia>
                 <Image src="/assets/icons/instagram.svg" width={14} height={16} alt="instagram" />
-              </StyledMedia>
-              <StyledMedia>
-                <Image src="/assets/icons/pinterest.svg" width={11} height={14} alt="pinterest" />
               </StyledMedia>
             </StyledSocialMedia>
           </StyledContact>
