@@ -29,7 +29,6 @@ export default async function Root(props: {
       <body>
         <StyledComponentsRegistry>
           <Header dictionary={dictionary.header} />
-
           {children}
           <Footer dictionary={dictionary.footer} />
         </StyledComponentsRegistry>

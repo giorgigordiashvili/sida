@@ -1,12 +1,14 @@
 'use client';
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import DonateButton from './DonateButton';
 import HeaderLink from './HeaderLink';
+import MobileMenu from './MobileMenu';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { usePathname, useRouter } from 'next/navigation';
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
+import MenuIcon from '../../public/assets/icons/MenuIcon';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -14,6 +16,7 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   @media (max-width: 1080px) {
     height: 63px;
@@ -68,13 +71,34 @@ const StyledNavigation = styled.div`
   align-items: center;
 
   @media (max-width: 1080px) {
-    gap: 33.96px;
+    gap: 18.97px;
+    justify-content: space-between;
+  }
+`;
+
+const MobileMenuIcon = styled.div`
+  display: none;
+  cursor: pointer;
+  position: relative;
+
+  @media (max-width: 1080px) {
+    display: block;
   }
 
-  @media (min-width: 1080px) {
-    & > img:nth-child(2) {
-      display: none;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::before {
+    transform: scale(1.3);
+    background: rgba(0, 0, 0, 0.05);
   }
 `;
 
@@ -83,6 +107,8 @@ export default function Header({
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['header'];
 }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuIconRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const router = useRouter();
 
@@ -94,6 +120,27 @@ export default function Header({
   const handleLanguageSwitch = () => {
     router.push(newPath);
   };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen((prevState) => !prevState);
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (!menuIconRef.current?.contains(event.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    }
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <StyledHeader>
@@ -124,13 +171,9 @@ export default function Header({
               onClick={handleLanguageSwitch}
               style={{ cursor: 'pointer' }}
             />
-            <Image
-              src="/assets/icons/menuIcon.svg"
-              width={23.1}
-              height={16.5}
-              alt="menu"
-              style={{ cursor: 'pointer' }}
-            />
+            <MobileMenuIcon onClick={toggleMobileMenu} ref={menuIconRef}>
+              <MenuIcon isOpen={mobileMenuOpen} />
+            </MobileMenuIcon>
             <Image
               src="/assets/icons/loop.svg"
               width={20}
@@ -138,10 +181,12 @@ export default function Header({
               alt="loop"
               style={{ cursor: 'pointer' }}
             />
-            <DonateButton />
+            <DonateButton text1={dictionary.donateNow.text1} text2={dictionary.donateNow.text2} />
           </StyledNavigation>
         </StyledContent>
       </StyledContainer>
+
+      <MobileMenu isOpen={mobileMenuOpen} menuIconRef={menuIconRef} dictionary={dictionary} />
     </StyledHeader>
   );
 }

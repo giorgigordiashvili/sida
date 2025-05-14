@@ -4,30 +4,57 @@ import Image from 'next/image';
 
 const StyledButton = styled.button`
   background: rgba(43, 182, 115, 1);
-  border: none;
-  color: #fff;
-  border-radius: 99px;
-  padding: 13px 30px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  text-transform: uppercase;
-  font-family: DM Sans;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 34px;
-  letter-spacing: 1.4px;
   cursor: pointer;
+  color: rgba(255, 255, 255, 1);
+
+  padding: 15.5px 23.5px;
+  border-radius: 20px;
+  gap: 10px;
+  font-family: Jost;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: capitalize;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+
+  @media (max-width: 1080px) {
+    width: 89px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 10px;
+    gap: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    vertical-align: middle;
+    text-transform: capitalize;
+
+    span {
+      display: none;
+    }
+  }
 `;
 
 const StyledArrow = styled.div`
   position: relative;
   width: 14px;
   height: 16px;
-  background: transparent;
+
+  @media (max-width: 1080px) {
+    width: 12px;
+    height: 13px;
+  }
 `;
 
-const DonateButton = () => {
+type Props = {
+  text1: string;
+  text2: string;
+};
+
+export default function DonateButton({ text1, text2 }: Props) {
   return (
     <StyledButton>
       <StyledArrow>
@@ -39,9 +66,9 @@ const DonateButton = () => {
           objectFit="cover"
         />
       </StyledArrow>
-      Donate now
+      <div>
+        {text1} <span>{text2}</span>
+      </div>
     </StyledButton>
   );
-};
-
-export default DonateButton;
+}

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import Typography from './ui/Typography';
+import Links from '../../public/assets/icons/Links';
 
 type Props = {
   name: string;
@@ -19,12 +20,32 @@ const StyledCard = styled.div`
   border-radius: 20px;
   box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.05);
   padding: 20px;
+
+  @media (max-width: 1080px) {
+    width: 174px;
+    height: 221px;
+    gap: 10px;
+    border-radius: 12.63px;
+    padding: 10px;
+  }
 `;
 
 const StyledImage = styled.div`
   width: 260px;
   height: 260px;
   border-radius: 10px;
+
+  @media (max-width: 1080px) {
+    width: 154px;
+    height: 154px;
+    border-radius: 12.63px;
+    margin-bottom: 10px;
+    img {
+      width: 154px;
+      height: 154px;
+      border-radius: 12.63px;
+    }
+  }
 `;
 
 const StyledInfo = styled.div`
@@ -32,9 +53,27 @@ const StyledInfo = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  div p:nth-child(2) {
+    color: rgba(77, 77, 77, 1);
+  }
+
+  @media (max-width: 1080px) {
+    margin-top: 10.11px;
+    div p:nth-child(1) {
+      font-size: 13px;
+      line-height: 100%;
+    }
+
+    div p:nth-child(2) {
+      font-size: 10px;
+      line-height: 100%;
+      margin-top: 5px;
+    }
+  }
 `;
 
-const StyledLinkImage = styled.div`
+const StyledLinkImage = styled.div<{ $isActive: boolean }>`
   width: 40px;
   height: 40px;
   border: 1px solid rgba(43, 182, 115, 1);
@@ -43,6 +82,14 @@ const StyledLinkImage = styled.div`
   align-items: center;
   border-radius: 5px;
   cursor: pointer;
+  background-color: ${(props) => (props.$isActive ? 'rgba(43, 182, 115, 1)' : 'transparent')};
+  transition: background-color 0.3s ease;
+
+  @media (max-width: 1080px) {
+    width: 24px;
+    height: 24px;
+    border-radius: 3.13px;
+  }
 `;
 
 const StyledDropdown = styled.div`
@@ -69,6 +116,10 @@ const StyledLinks = styled.div<{ $isVisible: boolean }>`
   overflow: hidden;
   margin-bottom: 5px;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  @media (max-width: 1080px) {
+    width: 22px;
+  }
 `;
 
 export default function MemberCard(props: Props) {
@@ -110,8 +161,8 @@ export default function MemberCard(props: Props) {
               </div>
             ))}
           </StyledLinks>
-          <StyledLinkImage onClick={toggleDropdown}>
-            <Image src="/assets/icons/links.svg" width={14} height={15} alt="links" />
+          <StyledLinkImage $isActive={isDropdownVisible} onClick={toggleDropdown}>
+            <Links color={isDropdownVisible ? 'white' : '#2BB673'} />
           </StyledLinkImage>
         </StyledDropdown>
       </StyledInfo>
