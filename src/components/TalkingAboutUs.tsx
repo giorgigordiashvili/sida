@@ -49,7 +49,14 @@ const StyledSlider = styled.div`
   margin: 0 auto;
 `;
 
-export default function TalkingAboutUs({ dictionary }) {
+interface TalkingAboutUsProps {
+  dictionary?: {
+    title?: string;
+    text?: string;
+  };
+}
+
+export default function TalkingAboutUs({ dictionary }: TalkingAboutUsProps) {
   const originalTestimonials = [
     {
       id: 1,
@@ -93,7 +100,7 @@ export default function TalkingAboutUs({ dictionary }) {
     ...originalTestimonials.map((item) => ({ ...item, key: `next3-${item.id}` })),
   ];
 
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const isInitialMount = useRef(true);
   const [activeCardIndex, setActiveCardIndex] = useState(originalTestimonials.length * 3);
 
@@ -101,45 +108,52 @@ export default function TalkingAboutUs({ dictionary }) {
   const originalLength = originalTestimonials.length;
 
   const centerCard = useCallback(
-    (index) => {
-      if (sliderRef.current) {
-        const sliderWidth = sliderRef.current.offsetWidth || 2000;
-        const scrollPosition = index * cardWidth - (sliderWidth - cardWidth) / 2;
+    (index: number) => {
+      const slider = sliderRef.current;
+      if (!slider) return;
 
-        sliderRef.current.scrollTo({
-          left: scrollPosition,
-          behavior: 'smooth',
-        });
+      const sliderWidth = slider.offsetWidth || 2000;
+      const scrollPosition = index * cardWidth - (sliderWidth - cardWidth) / 2;
 
-        const middleSetStart = originalLength * 3;
-        const middleSetEnd = middleSetStart + originalLength - 1;
-        let newIndex = index;
+      slider.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth',
+      });
 
-        if (index < middleSetStart) {
-          newIndex = index + originalLength;
-          setTimeout(() => {
-            sliderRef.current.scrollTo({
-              left: newIndex * cardWidth - (sliderWidth - cardWidth) / 2,
-              behavior: 'auto',
-            });
-          }, 400);
-        } else if (index > middleSetEnd) {
-          newIndex = index - originalLength;
-          setTimeout(() => {
-            sliderRef.current.scrollTo({
-              left: newIndex * cardWidth - (sliderWidth - cardWidth) / 2,
-              behavior: 'auto',
-            });
-          }, 400);
-        }
+      const middleSetStart = originalLength * 3;
+      const middleSetEnd = middleSetStart + originalLength - 1;
+      let newIndex = index;
 
-        setActiveCardIndex(newIndex);
+      if (index < middleSetStart) {
+        newIndex = index + originalLength;
+        setTimeout(() => {
+          const currentSlider = sliderRef.current;
+          if (!currentSlider) return;
+
+          currentSlider.scrollTo({
+            left: newIndex * cardWidth - (sliderWidth - cardWidth) / 2,
+            behavior: 'auto',
+          });
+        }, 400);
+      } else if (index > middleSetEnd) {
+        newIndex = index - originalLength;
+        setTimeout(() => {
+          const currentSlider = sliderRef.current;
+          if (!currentSlider) return;
+
+          currentSlider.scrollTo({
+            left: newIndex * cardWidth - (sliderWidth - cardWidth) / 2,
+            behavior: 'auto',
+          });
+        }, 400);
       }
+
+      setActiveCardIndex(newIndex);
     },
     [cardWidth, originalLength]
   );
 
-  const handleCardClick = (index) => {
+  const handleCardClick = (index: number) => {
     centerCard(index);
   };
 

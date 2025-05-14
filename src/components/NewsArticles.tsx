@@ -5,7 +5,16 @@ import { getDictionary } from '@/get-dictionary';
 import Typography from './ui/Typography';
 import styled from 'styled-components';
 
-// Main container styles
+// ---- TypeScript Fix: Define prop types ----
+type CardPosition = 'active' | 'left' | 'right' | 'far-left' | 'far-right';
+
+interface CardWrapperProps {
+  isActive: boolean;
+  position: CardPosition;
+  totalCards: number;
+}
+
+// ---- Styled Components ----
 const StyledSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,7 +31,6 @@ const StyledSection = styled.div`
   }
 `;
 
-// Title section styles
 const StyledTitle = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,7 +65,6 @@ const StyledTitle = styled.div`
   }
 `;
 
-// Card container with desktop and mobile styles
 const StyledContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -75,29 +82,25 @@ const StyledContainer = styled.div`
   }
 `;
 
-// Slider track for mobile view - modified for 3D effect
-const SliderTrack = styled.div<{ offset: number }>`
+const SliderTrack = styled.div<{ offset?: number }>`
   display: flex;
   width: 100%;
   transition: transform 0.4s ease;
   gap: 20px;
 
   @media (max-width: 1080px) {
-    transform: ${({ offset }) => `translateX(${offset}px)`};
+    transform: ${({ offset }) => `translateX(${offset || 0}px)`};
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: visible; /* Ensure transformed cards don't get cut off */
+    overflow: visible;
   }
 `;
 
-// Individual card wrapper with enhanced 3D effect
-const CardWrapper = styled.div.withConfig({
-  shouldForwardProp: (prop) => !['isActive', 'position', 'totalCards'].includes(prop),
-})`
+const CardWrapper = styled.div<CardWrapperProps>`
   flex: 1;
   transition: all 0.4s ease;
 
@@ -115,27 +118,25 @@ const CardWrapper = styled.div.withConfig({
       return 1;
     }};
     cursor: pointer;
-    top: 50%; /* Position vertically in the middle */
-    transform-origin: center center; /* Set transform origin to center */
+    top: 50%;
+    transform-origin: center center;
     transform: ${({ isActive, position }) => {
-      // First apply the vertical centering
       const baseTransform = 'translateY(-50%) ';
-
-      // Then add the horizontal positioning and scaling with medium-sized gaps
       if (isActive) {
         return baseTransform + 'translateX(0) scale(1) translateZ(0)';
       } else if (position === 'left') {
-        return baseTransform + 'translateX(-250px) scale(0.85) translateZ(-100px)'; // Medium gap
+        return baseTransform + 'translateX(-250px) scale(0.85) translateZ(-100px)';
       } else if (position === 'right') {
-        return baseTransform + 'translateX(250px) scale(0.85) translateZ(-100px)'; // Medium gap
+        return baseTransform + 'translateX(250px) scale(0.85) translateZ(-100px)';
       }
       return position === 'far-left'
-        ? baseTransform + 'translateX(-500px) scale(0.7) translateZ(-200px)' // Medium gap
-        : baseTransform + 'translateX(500px) scale(0.7) translateZ(-200px)'; // Medium gap
+        ? baseTransform + 'translateX(-500px) scale(0.7) translateZ(-200px)'
+        : baseTransform + 'translateX(500px) scale(0.7) translateZ(-200px)';
     }};
   }
 `;
 
+// ---- Main Component ----
 export default function NewsArticles({
   dictionary,
 }: {
@@ -147,12 +148,10 @@ export default function NewsArticles({
   const [isTouching, setIsTouching] = useState(false);
   const [startX, setStartX] = useState(0);
 
-  // Detect client-side
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Map dictionary.cards to newsItems
   const newsItems = dictionary.cards.map((card, index) => ({
     id: index + 1,
     title: card.title,
@@ -162,19 +161,16 @@ export default function NewsArticles({
     comment: dictionary.comments,
   }));
 
-  // Get the normalized index for infinite scrolling (handles overflow)
-  const getNormalizedIndex = (index) => {
+  const getNormalizedIndex = (index: number) => {
     const totalItems = newsItems.length;
     return ((index % totalItems) + totalItems) % totalItems;
   };
 
-  // Determine card position relative to active card (for 3D effect)
-  const getCardPosition = (index) => {
+  const getCardPosition = (index: number): CardPosition => {
     const totalItems = newsItems.length;
     const normalizedActiveIndex = getNormalizedIndex(activeIndex);
     const normalizedIndex = getNormalizedIndex(index);
 
-    // Calculate difference considering wrap-around
     let diff = normalizedIndex - normalizedActiveIndex;
     if (diff > totalItems / 2) diff -= totalItems;
     if (diff < -totalItems / 2) diff += totalItems;
@@ -186,30 +182,25 @@ export default function NewsArticles({
     return 'far-left';
   };
 
-  // Handle card click to change active card
-  const handleCardClick = (index) => {
+  const handleCardClick = (index: number) => {
     setActiveIndex(index);
   };
 
-  // Touch handlers for mobile scrolling
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     if (window.innerWidth > 1080) return;
     setIsTouching(true);
     setStartX(e.touches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     if (!isTouching || window.innerWidth > 1080) return;
     const x = e.touches[0].clientX;
     const distance = startX - x;
 
-    // Detect significant movement
     if (Math.abs(distance) > 50) {
       if (distance > 0) {
-        // Swipe left - go to next
         setActiveIndex((prev) => getNormalizedIndex(prev + 1));
       } else {
-        // Swipe right - go to previous
         setActiveIndex((prev) => getNormalizedIndex(prev - 1));
       }
       setIsTouching(false);
@@ -220,7 +211,6 @@ export default function NewsArticles({
     setIsTouching(false);
   };
 
-  // Resize handler
   useEffect(() => {
     const handleResize = () => {
       if (containerRef.current && window.innerWidth <= 1080) {
@@ -246,9 +236,13 @@ export default function NewsArticles({
         onTouchEnd={handleTouchEnd}
       >
         {isClient && window.innerWidth > 1080 ? (
-          // Desktop view remains unchanged
           newsItems.map((item) => (
-            <CardWrapper key={item.id}>
+            <CardWrapper
+              key={item.id}
+              isActive={false}
+              position="active"
+              totalCards={newsItems.length}
+            >
               <NewsCard
                 title={item.title}
                 text={item.text}
@@ -259,7 +253,6 @@ export default function NewsArticles({
             </CardWrapper>
           ))
         ) : (
-          // Mobile view with 3D carousel effect
           <SliderTrack>
             {newsItems.map((item, index) => {
               const position = getCardPosition(index);

@@ -130,6 +130,11 @@
     "listThree": "Small Acts, Big Impact",
     "button": "Donate Now",
     "help": "Need Help?",
-    "number": "(319) 555-0115"
+    "number": "(319) 555-0115",
+
+    "donateNow": {
+      "text1": "Donate",
+      "text2": "Now"
+    }
   }
 }

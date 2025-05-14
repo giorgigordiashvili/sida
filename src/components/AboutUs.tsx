@@ -75,7 +75,6 @@ export default function AboutUs({
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['aboutUs'];
 }) {
-  // Create an array of list items from the dictionary
   const listItems = [dictionary.listOne, dictionary.listTwo, dictionary.listThree];
 
   return (
@@ -113,7 +112,7 @@ export default function AboutUs({
           </StyledList>
 
           <StyledHelp>
-            <DonateButton />
+            <DonateButton text1={dictionary.donateNow.text1} text2={dictionary.donateNow.text2} />
             <Help dictionary={dictionary}></Help>
           </StyledHelp>
         </StyledBioContainer>

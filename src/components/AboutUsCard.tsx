@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Typography from './ui/Typography';
 
-// Props interface for the component
 interface AboutUsCardProps {
   text: string;
   author: string;
@@ -82,7 +81,7 @@ const AboutUsCard: React.FC<AboutUsCardProps> = ({ text, author, role, isActive,
       <AuthorInfo>
         <AuthorAvatar />
         <AuthorDetails>
-          <Typography variant="bodyBold">{author}</Typography>
+          <Typography variant="sBodytext">{author}</Typography>
           <Typography variant="sBodytext">{role}</Typography>
         </AuthorDetails>
       </AuthorInfo>

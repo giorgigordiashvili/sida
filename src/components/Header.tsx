@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import DonateButton from './DonateButton';
 import HeaderLink from './HeaderLink';
-import MobileMenu from './mobileMenu';
+import MobileMenu from './MobileMenu';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { usePathname, useRouter } from 'next/navigation';

@@ -116,7 +116,7 @@ const MobileMenuLink = styled.div<{ index: number }>`
 
 interface MobileMenuProps {
   isOpen: boolean;
-  menuIconRef: React.RefObject<HTMLDivElement>;
+  menuIconRef: React.RefObject<HTMLDivElement | null>;
   dictionary: {
     home: string;
     aboutUs: string;
@@ -155,20 +155,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, menuIconRef, dictionary
   }, [isOpen, menuIconRef]);
 
   const menuLinks = [
-    { key: 'home', title: dictionary.home },
-    { key: 'aboutUs', title: dictionary.aboutUs },
-    { key: 'services', title: dictionary.services },
-    { key: 'projects', title: dictionary.projects },
-    { key: 'blog', title: dictionary.blog },
-    { key: 'page', title: dictionary.page },
-    { key: 'contact', title: dictionary.contact },
+    { key: 'home', title: dictionary.home, href: '/' },
+    { key: 'aboutUs', title: dictionary.aboutUs, href: '/about' },
+    { key: 'services', title: dictionary.services, href: '/services' },
+    { key: 'projects', title: dictionary.projects, href: '/projects' },
+    { key: 'blog', title: dictionary.blog, href: '/blog' },
+    { key: 'page', title: dictionary.page, href: '/page' },
+    { key: 'contact', title: dictionary.contact, href: '/contact' },
   ];
 
   return (
     <MobileMenuContainer className={isOpen ? 'open' : ''} ref={menuRef}>
       {menuLinks.map((link, index) => (
         <MobileMenuLink key={link.key} index={index}>
-          <HeaderLink title={link.title} href="/" />
+          <HeaderLink title={link.title} href={link.href} />
         </MobileMenuLink>
       ))}
     </MobileMenuContainer>
