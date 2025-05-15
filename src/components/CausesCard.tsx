@@ -18,10 +18,25 @@ const StyledCard = styled.div`
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
+
+  @media (max-width: 1080px) {
+    width: 258px;
+    height: 248px;
+    border-radius: 15.95px;
+
+    img {
+      width: 258px;
+      height: 98px;
+    }
+  }
 `;
 
 const StyledContent = styled.div`
   padding: 30px 40px 50px 40px;
+
+  @media (max-width: 1080px) {
+    padding: 14px 0 0 0;
+  }
 `;
 
 const StyledText = styled.div`
@@ -36,6 +51,29 @@ const StyledText = styled.div`
   :nth-child(2) {
     color: rgba(77, 77, 77, 1);
     margin-top: 10px;
+  }
+
+  @media (max-width: 1080px) {
+    :nth-child(1) {
+      font-size: 18px;
+      line-height: 100%;
+      text-align: center;
+    }
+
+    :nth-child(2) {
+      font-size: 13px;
+      line-height: 100%;
+      text-align: center;
+      text-transform: capitalize;
+      padding: 0 30px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      white-space: normal;
+    }
   }
 `;
 
@@ -54,6 +92,22 @@ const StyledEarning = styled.div`
       color: rgba(31, 31, 31, 1);
     }
   }
+
+  @media (max-width: 1080px) {
+    margin-top: 10px;
+    padding: 0 47px;
+
+    div {
+      :nth-child(1) {
+        font-size: 10px;
+        line-height: 23.5px;
+      }
+      :nth-child(2) {
+        font-size: 10px;
+        line-height: 23.5px;
+      }
+    }
+  }
 `;
 
 const StyledPercentage = styled.div`
@@ -64,6 +118,13 @@ const StyledPercentage = styled.div`
   border-radius: 3px;
   overflow: visible;
   position: relative;
+
+  @media (max-width: 1080px) {
+    height: 4px;
+    width: 178px;
+    margin: auto;
+    margin-top: 14px;
+  }
 `;
 
 const ProgressBar = styled.div<{ width: string }>`
@@ -85,6 +146,13 @@ const ProgressBar = styled.div<{ width: string }>`
     right: 0;
     border: 3px solid ${(props) => props.color || 'rgba(43, 182, 115, 1)'};
     top: -5px;
+
+    @media (max-width: 1080px) {
+      width: 12px;
+      height: 12px;
+      top: -4px;
+      border: 2.61px solid ${(props) => props.color || 'rgba(43, 182, 115, 1)'};
+    }
   }
 `;
 
