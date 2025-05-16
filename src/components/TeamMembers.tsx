@@ -22,6 +22,7 @@ const StyledSection = styled.section`
     flex-direction: column;
     gap: 30px;
     align-items: center;
+    margin-top: 30px;
   }
 `;
 

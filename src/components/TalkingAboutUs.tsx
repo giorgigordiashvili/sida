@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import Typography from './ui/Typography';
 import AboutUsCard from './AboutUsCard';
+import DiscoverBtn from './DiscoverBtn';
 
 const StyledSection = styled.section`
   width: 100%;
@@ -10,7 +11,7 @@ const StyledSection = styled.section`
   overflow: hidden;
 
   @media (max-width: 1080px) {
-    padding: 0 0 60px;
+    padding: 0;
   }
 `;
 
@@ -37,6 +38,15 @@ const StyledTitles = styled.div`
     padding-top: 60px;
     margin-bottom: 40px;
     gap: 5px;
+
+    :nth-child(1) {
+      display: none;
+    }
+
+    @media (max-width: 1080px) {
+      padding-top: 30px;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -59,7 +69,7 @@ const StyledSlider = styled.div`
   margin: 0 auto;
 
   @media (max-width: 1080px) {
-    padding: 20px 0;
+    padding: 30px 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -75,21 +85,20 @@ const StyledSlider = styled.div`
     }
 
     & > *:not(.active) {
-      transform: scale(0.8); /* Scale down inactive cards on mobile */
     }
 
     & > *.active {
-      transform: scale(1); /* Active card at full size */
+      transform: scale(1);
     }
   }
 
   @media (min-width: 1081px) {
     & > *:not(.active) {
-      transform: scale(0.9); /* Slightly smaller inactive cards on desktop */
+      transform: scale(0.9);
     }
 
     & > *.active {
-      transform: scale(1); /* Active card at full size */
+      transform: scale(1);
     }
   }
 `;
@@ -332,6 +341,7 @@ export default function TalkingAboutUs({ dictionary }: TalkingAboutUsProps) {
             </div>
           ))}
         </StyledSlider>
+        <DiscoverBtn dictionary={''} />
       </SliderContainer>
     </StyledSection>
   );

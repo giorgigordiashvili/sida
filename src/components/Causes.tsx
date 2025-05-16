@@ -65,6 +65,7 @@ const StyledCards = styled.div`
   padding-top: 60px;
   display: flex;
   justify-content: space-between;
+  gap: 15px;
   @media (max-width: 1080px) {
     display: none;
     padding-top: 30px;

@@ -54,7 +54,6 @@ const CheckmarkContainer = styled.div`
 
 const ListItemText = styled.div`
   flex: 1;
-  font-family: DM Sans;
   font-size: 18px;
   line-height: 30px;
 `;
