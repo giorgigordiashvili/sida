@@ -9,9 +9,9 @@ import styled from 'styled-components';
 type CardPosition = 'active' | 'left' | 'right' | 'far-left' | 'far-right';
 
 interface CardWrapperProps {
-  $isActive: boolean; // Changed to transient prop
-  $position: CardPosition; // Changed to transient prop
-  $totalCards: number; // Changed to transient prop
+  $isActive: boolean;
+  $position: CardPosition;
+  $totalCards: number;
 }
 
 // ---- Styled Components ----

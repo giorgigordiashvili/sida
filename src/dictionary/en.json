@@ -30,6 +30,7 @@
   "talkingAboutUs": {
     "title": "About Us",
     "text": "What They are Talking About Us",
+    "btn": "VIEW MORE",
     "testimonials": [
       {
         "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
@@ -58,6 +59,12 @@
       {
         "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
         "author": "Robert Fox",
+        "role": "Volunteer",
+        "avatar": "/assets/images/pfp.svg"
+      },
+      {
+        "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
+        "author": "gela mamageishvili",
         "role": "Volunteer",
         "avatar": "/assets/images/pfp.svg"
       }

@@ -26,7 +26,6 @@ const TestimonialCard = styled.div<{ $isActive: boolean }>`
   opacity: ${(props) => (props.$isActive ? 1 : 0.7)};
   transform: scale(${(props) => (props.$isActive ? 1 : 0.8)});
   flex-shrink: 0;
-  margin: 0 20px;
   cursor: ${(props) => (props.$isActive ? 'pointer' : 'default')};
 
   ${(props) =>

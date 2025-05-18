@@ -58,6 +58,8 @@ const StyledContainer = styled.div`
 
   @media (max-width: 1080px) {
     padding: 0;
+    width: 100%;
+    overflow: hidden;
   }
 `;
 
@@ -75,6 +77,7 @@ const StyledCards = styled.div`
 const MobileCardsContainer = styled.div`
   display: none;
   padding-top: 30px;
+  width: 100%;
 
   @media (max-width: 1080px) {
     display: block;
@@ -82,16 +85,24 @@ const MobileCardsContainer = styled.div`
 
   .swiper {
     width: 100%;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+    align-items: center;
   }
 
   .swiper-slide {
     transition: transform 0.3s ease;
     transform: scale(0.8);
+    display: flex;
+    justify-content: center;
+    width: auto;
 
     @media (max-width: 1080px) {
-      margin-right: 0;
-      width: 300px;
+      width: 80%;
+      max-width: 320px;
     }
   }
 
@@ -99,11 +110,20 @@ const MobileCardsContainer = styled.div`
     transform: scale(1);
   }
 
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
   .swiper-pagination-bullet {
     width: 14px;
     height: 14px;
     background: rgba(217, 217, 217, 1);
     margin: auto;
+    opacity: 1;
+    transition: all 0.5s ease;
   }
 
   .swiper-pagination-bullet-active {
@@ -111,7 +131,7 @@ const MobileCardsContainer = styled.div`
     background: rgba(0, 0, 0, 1);
     width: 20px;
     height: 20px;
-    margin: auto;
+    transition: all 0.5s ease;
   }
 `;
 
@@ -150,8 +170,8 @@ export default function Causes({
               pagination={{
                 clickable: true,
               }}
-              spaceBetween={20}
-              slidesPerView={1.5}
+              spaceBetween={-32}
+              slidesPerView="auto"
               centeredSlides={true}
               initialSlide={1}
             >
