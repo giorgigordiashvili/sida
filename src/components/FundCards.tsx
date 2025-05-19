@@ -7,9 +7,10 @@ import { getDictionary } from '@/get-dictionary';
 type CardPosition = 'active' | 'left' | 'right' | 'far-left' | 'far-right';
 
 const StyledContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  gap: 10px;
   max-width: 1290px;
   margin: auto;
   margin-top: -100px;

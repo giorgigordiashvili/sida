@@ -11,17 +11,18 @@ interface FundCardProps {
 }
 
 const StyledCard = styled.div<{ $backgroundColor: string }>`
-  width: 410px;
+  max-width: 410px;
+  width: 100%;
   height: 236px;
   border-radius: 20px;
   padding: 30px;
   color: #fff;
-  position: relative;
   overflow: hidden;
   background: ${({ $backgroundColor }) => $backgroundColor};
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
   @media (max-width: 1080px) {
     width: 204px;
@@ -36,7 +37,7 @@ const StyledCard = styled.div<{ $backgroundColor: string }>`
 const StyledBio = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 10px;
   width: 240px;
 
   @media (max-width: 1080px) {
@@ -70,21 +71,35 @@ const StyledImage = styled.img`
 
 const ContentWrapper = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 
   @media (max-width: 1080px) {
     text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 const StyledReadMore = styled.div`
-  display: none;
+  display: flex;
+  order: 3;
+  justify-content: center;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+
+  p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 34px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
   @media (max-width: 1080px) {
-    display: flex;
-    order: 3;
-    justify-content: center;
     gap: 5px;
-    display: flex;
-    align-items: center;
 
     p {
       font-weight: 600;
@@ -97,8 +112,8 @@ const StyledReadMore = styled.div`
 export default function FundCard({ title, description, imgSrc, backgroundColor }: FundCardProps) {
   return (
     <StyledCard $backgroundColor={backgroundColor}>
-      {imgSrc && <StyledImage src={imgSrc} alt={title} />}
       <ContentWrapper>
+        {imgSrc && <StyledImage src={imgSrc} alt={title} />}
         <StyledBio>
           <Typography variant="lBodytext">{title}</Typography>
           <Typography variant="sBodytext">{description}</Typography>

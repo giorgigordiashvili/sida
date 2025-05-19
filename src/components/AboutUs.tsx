@@ -5,15 +5,20 @@ import Image from 'next/image';
 import DonateButton from '@/components/DonateButton';
 import Typography from './ui/Typography';
 import Help from './Help';
+import { useState } from 'react';
 
 const Container = styled.div`
   padding: 73px 0 189px 0;
   color: rgba(52, 52, 52, 1);
   max-width: 1290px;
   margin: auto;
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr;
   gap: 35px;
+
+  @media (max-width: 1080px) {
+    justify-content: center;
+  }
 `;
 
 const StyledBioContainer = styled.div`
@@ -21,10 +26,19 @@ const StyledBioContainer = styled.div`
   flex-direction: column;
   width: 571px;
   gap: 30px;
+
+  @media (max-width: 1080px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const MainContainer = styled.div`
   background-color: rgba(249, 249, 247, 1);
+  @media (max-width: 1080px) {
+  }
 `;
 
 const StyledImageBox = styled.div`
@@ -32,6 +46,10 @@ const StyledImageBox = styled.div`
   width: 571px;
   height: 571px;
   background: transparent;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const StyledList = styled.ul`
@@ -50,6 +68,10 @@ const CheckmarkContainer = styled.div`
   margin-right: 12px;
   flex-shrink: 0;
   margin-top: 3px;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const ListItemText = styled.div`
@@ -62,6 +84,62 @@ const StyledTitle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media (max-width: 1080px) {
+    :nth-child(1) {
+      display: none;
+    }
+
+    :nth-child(2) {
+      font-size: 28px;
+      text-align: center;
+      vertical-align: middle;
+      text-transform: capitalize;
+    }
+  }
+`;
+const StyledBioText = styled.div`
+  @media (max-width: 1080px) {
+    display: none;
+  }
+`;
+
+const StyledDonateButton = styled.div`
+  @media (max-width: 1080px) {
+    display: none;
+  }
+`;
+
+const StyledSwitcher = styled.div`
+  display: none;
+
+  @media (max-width: 1080px) {
+    display: flex;
+    width: 270px;
+    height: 44px;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: rgba(249, 249, 247, 1);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const SwitcherItem = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: ${(props) => (props.selected ? 'rgba(31, 31, 31, 1)' : 'transparent')};
+
+  img {
+    filter: ${(props) => (props.selected ? 'brightness(0) invert(1)' : 'none')};
+  }
 `;
 
 const StyledHelp = styled.div`
@@ -69,12 +147,18 @@ const StyledHelp = styled.div`
   margin-top: 10px;
   gap: 40px;
 `;
+
 export default function AboutUs({
   dictionary,
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['aboutUs'];
 }) {
   const listItems = [dictionary.listOne, dictionary.listTwo, dictionary.listThree];
+  const [selectedItem, setSelectedItem] = useState(0);
+
+  const handleItemClick = (index) => {
+    setSelectedItem(index);
+  };
 
   return (
     <MainContainer>
@@ -93,10 +177,30 @@ export default function AboutUs({
             <Typography variant="sBodytext">{dictionary.title}</Typography>
             <Typography variant="h2">{dictionary.description}</Typography>
           </StyledTitle>
-          <Typography variant="sBodytext">{dictionary.bio}</Typography>
+          <StyledBioText>
+            <Typography variant="sBodytext">{dictionary.bio}</Typography>
+          </StyledBioText>
           <StyledList>
+            <StyledSwitcher>
+              {[0, 1, 2].map((index) => (
+                <SwitcherItem
+                  key={index}
+                  selected={selectedItem === index}
+                  onClick={() => handleItemClick(index)}
+                >
+                  <Image
+                    src="/assets/images/hero/checkmarkk.svg"
+                    alt="Checkmark"
+                    width={29}
+                    height={29}
+                  />
+                </SwitcherItem>
+              ))}
+            </StyledSwitcher>
+
+            {/* Desktop view - show all list items */}
             {listItems.map((item, index) => (
-              <ListItem key={index}>
+              <ListItem key={index} style={{ display: window.innerWidth > 1080 ? 'flex' : 'none' }}>
                 <CheckmarkContainer>
                   <Image
                     src="/assets/images/hero/checkmarkk.svg"
@@ -108,11 +212,19 @@ export default function AboutUs({
                 <ListItemText>{item}</ListItemText>
               </ListItem>
             ))}
+
+            {window.innerWidth <= 1080 && (
+              <ListItem>
+                <ListItemText>{listItems[selectedItem]}</ListItemText>
+              </ListItem>
+            )}
           </StyledList>
 
           <StyledHelp>
-            <DonateButton text1={dictionary.donateNow.text1} text2={dictionary.donateNow.text2} />
-            <Help dictionary={dictionary}></Help>
+            <StyledDonateButton>
+              <DonateButton text1={dictionary.donateNow.text1} text2={dictionary.donateNow.text2} />
+            </StyledDonateButton>
+            <Help dictionary={dictionary} />
           </StyledHelp>
         </StyledBioContainer>
       </Container>

@@ -10,7 +10,7 @@ interface AboutUsCardProps {
   avatar?: string;
   isActive: boolean;
   onClick: () => void;
-  isMobile: boolean; // Add isMobile prop
+  isMobile: boolean;
 }
 
 const TestimonialCard = styled.div<{ $isActive: boolean }>`
