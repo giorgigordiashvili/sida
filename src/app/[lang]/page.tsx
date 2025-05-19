@@ -7,7 +7,7 @@ import Causes from '@/components/Causes';
 import TalkingAboutUs from '@/components/TalkingAboutUs';
 import Hero from '@/components/Hero';
 import FundCards from '@/components/FundCards';
-import AboutUs from '@/components/Help';
+import AboutUs from '@/components/AboutUs';
 
 export default async function IndexPage(props: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await props.params;
