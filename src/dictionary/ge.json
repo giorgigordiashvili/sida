@@ -174,5 +174,79 @@
       "text1": "დაადონატე",
       "text2": ""
     }
+  },
+
+  "volunteer": {
+    "name": "მოხალისე",
+    "home": "მთავარი",
+    "volunteersInfo": [
+      {
+        "name": "არლინ მაკკოი",
+        "job": "ექთნის ასისტენტი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "ჯენი უილსონი",
+        "job": "ვებ დიზაინერი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      }
+    ]
+  },
+  "projects": {
+    "name": "პროექტები",
+    "home": "მთავარი"
   }
 }

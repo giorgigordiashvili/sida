@@ -5,7 +5,7 @@ import Image from 'next/image';
 import DonateButton from '@/components/DonateButton';
 import Typography from './ui/Typography';
 import Help from './Help';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Container = styled.div`
   padding: 73px 0 189px 0;
@@ -13,7 +13,6 @@ const Container = styled.div`
   max-width: 1290px;
   margin: auto;
   display: flex;
-  grid-template-columns: 1fr 1fr;
   gap: 35px;
 
   @media (max-width: 1080px) {
@@ -28,7 +27,6 @@ const StyledBioContainer = styled.div`
   gap: 30px;
 
   @media (max-width: 1080px) {
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -37,8 +35,6 @@ const StyledBioContainer = styled.div`
 
 const MainContainer = styled.div`
   background-color: rgba(249, 249, 247, 1);
-  @media (max-width: 1080px) {
-  }
 `;
 
 const StyledImageBox = styled.div`
@@ -98,6 +94,7 @@ const StyledTitle = styled.div`
     }
   }
 `;
+
 const StyledBioText = styled.div`
   @media (max-width: 1080px) {
     display: none;
@@ -126,7 +123,11 @@ const StyledSwitcher = styled.div`
   }
 `;
 
-const SwitcherItem = styled.div`
+interface SwitcherItemProps {
+  selected: boolean;
+}
+
+const SwitcherItem = styled.div<SwitcherItemProps>`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -155,8 +156,21 @@ export default function AboutUs({
 }) {
   const listItems = [dictionary.listOne, dictionary.listTwo, dictionary.listThree];
   const [selectedItem, setSelectedItem] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1200); // Default for SSR
 
-  const handleItemClick = (index) => {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    setWindowWidth(window.innerWidth); // Set initial width
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleItemClick = (index: number) => {
     setSelectedItem(index);
   };
 
@@ -169,7 +183,7 @@ export default function AboutUs({
             width={700}
             height={617}
             alt="circle"
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
           />
         </StyledImageBox>
         <StyledBioContainer>
@@ -198,9 +212,8 @@ export default function AboutUs({
               ))}
             </StyledSwitcher>
 
-            {/* Desktop view - show all list items */}
             {listItems.map((item, index) => (
-              <ListItem key={index} style={{ display: window.innerWidth > 1080 ? 'flex' : 'none' }}>
+              <ListItem key={index} style={{ display: windowWidth > 1080 ? 'flex' : 'none' }}>
                 <CheckmarkContainer>
                   <Image
                     src="/assets/images/hero/checkmarkk.svg"
@@ -213,7 +226,7 @@ export default function AboutUs({
               </ListItem>
             ))}
 
-            {window.innerWidth <= 1080 && (
+            {windowWidth <= 1080 && (
               <ListItem>
                 <ListItemText>{listItems[selectedItem]}</ListItemText>
               </ListItem>
