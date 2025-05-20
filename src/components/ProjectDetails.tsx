@@ -11,6 +11,9 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @media (max-width: 1080px) {
+    padding-inline: 16px;
+  }
 `;
 
 const StyledImageContainer = styled.div`
@@ -45,12 +48,18 @@ const StyledTextImages = styled.div`
   gap: 30px;
   grid-template-columns: 850px 410px;
   width: 100%;
+  @media (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const StyledTexts = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (max-width: 1080px) {
+  }
 `;
 
 const StyledSmallImages = styled.div`
@@ -59,18 +68,34 @@ const StyledSmallImages = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @media (max-width: 1080px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+`;
+
+const StyledBio = styled.div`
+  @media (max-width: 1080px) {
+  }
 `;
 
 const StyledSmallImage1 = styled.div`
   height: 416px;
   background-color: rgba(217, 217, 217, 1);
   border-radius: 20px;
+  @media (max-width: 1080px) {
+    height: 150px;
+  }
 `;
 
 const StyledSmallImage2 = styled.div`
   height: 191px;
   background-color: rgba(217, 217, 217, 1);
   border-radius: 20px;
+  @media (max-width: 1080px) {
+    height: 150px;
+  }
 `;
 
 const StyledCardDetails = styled.div`
@@ -143,6 +168,21 @@ const StyledCardInfos = styled.div`
 const GreyText = styled.div`
   color: #4d4d4d;
 `;
+
+const StyledButtons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+`;
+const StyledButton = styled.div`
+  display: flex;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+  font-weight: 700;
+`;
+
 export default function ProjectDetails({
   dictionary,
 }: {
@@ -243,16 +283,28 @@ export default function ProjectDetails({
               <Typography variant="mBodytext">{dictionary.listThree}</Typography>
             </StyledList>
           </StyledLi>
-          <Typography variant="lBodytext">{dictionary.bioTitle}</Typography>
-          <GreyText>
-            <Typography variant="sBodytext">{dictionary.bioDescription}</Typography>
-          </GreyText>
+          <StyledBio>
+            <Typography variant="lBodytext">{dictionary.bioTitle}</Typography>
+            <GreyText>
+              <Typography variant="sBodytext">{dictionary.bioDescription}</Typography>
+            </GreyText>
+          </StyledBio>
         </StyledTexts>
         <StyledSmallImages>
           <StyledSmallImage1 />
           <StyledSmallImage2 />
         </StyledSmallImages>
       </StyledTextImages>
+      <StyledButtons>
+        <StyledButton>
+          <Image src="/assets/images/projectDetails/prev.svg" alt="button" width={40} height={40} />
+          <Typography variant="mBodytext">{dictionary.previoous}</Typography>
+        </StyledButton>
+        <StyledButton>
+          <Typography variant="mBodytext">{dictionary.next}</Typography>
+          <Image src="/assets/images/projectDetails/next.svg" alt="button" width={40} height={40} />
+        </StyledButton>
+      </StyledButtons>
     </StyledContainer>
   );
 }

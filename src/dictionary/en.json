@@ -156,7 +156,9 @@
       "author": "Author:",
       "authorDetail": "Rajin Saleh",
       "tags": "Tags:",
-      "tagsDetail": "Water For All"
+      "tagsDetail": "Water For All",
+      "previous": "Previous",
+      "next": "Next"
     }
   }
 }
