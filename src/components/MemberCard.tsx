@@ -16,7 +16,7 @@ type Props = {
 };
 
 const StyledCard = styled.div<{ $noMedia?: boolean }>`
-  max-width: 300px;
+  max-width: ${(props) => (props.$noMedia ? '100%' : '300px')};
   width: 100%;
   height: 403px;
   border-radius: 20px;
@@ -24,7 +24,7 @@ const StyledCard = styled.div<{ $noMedia?: boolean }>`
   padding: 20px;
 
   @media (max-width: 1080px) {
-    width: ${(props) => (props.$noMedia ? '300px' : '174px')};
+    width: ${(props) => (props.$noMedia ? '100%' : '174px')};
     height: ${(props) => (props.$noMedia ? '403px' : '221px')};
     gap: ${(props) => (props.$noMedia ? '' : '10px')};
     border-radius: ${(props) => (props.$noMedia ? '20px' : '12.63px')};
@@ -33,17 +33,28 @@ const StyledCard = styled.div<{ $noMedia?: boolean }>`
 `;
 
 const StyledImage = styled.div<{ $noMedia?: boolean }>`
-  max-width: 260px;
+  max-width: ${(props) => (props.$noMedia ? '100%' : '260px')};
   width: 100%;
   height: 260px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: ${(props) => (props.$noMedia ? '100%' : '260px')};
+    height: 260px;
+    object-fit: ${(props) => (props.$noMedia ? 'cover' : 'contain')};
+    border-radius: 10px;
+  }
+
   @media (max-width: 1080px) {
-    width: ${(props) => (props.$noMedia ? '260px' : '154px')};
+    width: ${(props) => (props.$noMedia ? '100%' : '154px')};
     height: ${(props) => (props.$noMedia ? '260px' : '154px')};
     border-radius: ${(props) => (props.$noMedia ? '10px' : '12.63px')};
     margin-bottom: ${(props) => (props.$noMedia ? '20px' : '10px')};
+
     img {
-      width: ${(props) => (props.$noMedia ? '260px' : '154px')};
+      width: ${(props) => (props.$noMedia ? '100%' : '154px')};
       height: ${(props) => (props.$noMedia ? '260px' : '154px')};
       border-radius: ${(props) => (props.$noMedia ? '10px' : '12.63px')};
     }
