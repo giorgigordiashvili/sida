@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Typography from './ui/Typography';
 import { getDictionary } from '@/get-dictionary';
 import Image from 'next/image';
+import { Desktop, Mobile } from './ui/Responsive';
 
 const StyledContainer = styled.div`
   max-width: 1290px;
@@ -33,6 +34,14 @@ const StyledProjectDetails = styled.div`
   position: absolute;
   bottom: 20px;
   left: 20px;
+  @media (max-width: 1080px) {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border: 0 solid rgba(227, 227, 227, 1);
+    border-width: 0 1px 1px 1px;
+    box-shadow: 0px -6px 15px 0px rgba(0, 0, 0, 0.15);
+  }
 `;
 
 const StyledCardTitle = styled.div`
@@ -206,14 +215,12 @@ export default function ProjectDetails({
               <StyledDate>
                 <Typography variant="mBodytext">{dictionary.card.date}</Typography>
                 <GreyText>
-                  {' '}
                   <Typography variant="sBodytext">{dictionary.card.dateDetail}</Typography>
                 </GreyText>
               </StyledDate>
               <StyledAuthor>
                 <Typography variant="mBodytext">{dictionary.card.author}</Typography>
                 <GreyText>
-                  {' '}
                   <Typography variant="sBodytext">{dictionary.card.authorDetail}</Typography>
                 </GreyText>
               </StyledAuthor>
@@ -250,7 +257,12 @@ export default function ProjectDetails({
       </StyledImageContainer>
       <StyledTextImages>
         <StyledTexts>
-          <Typography variant="h2">{dictionary.title}</Typography>
+          <Desktop>
+            <Typography variant="h2">{dictionary.title}</Typography>
+          </Desktop>
+          <Mobile>
+            <Typography variant="h2">{dictionary.title}</Typography>
+          </Mobile>
           <GreyText>
             <Typography variant="sBodytext">{dictionary.description}</Typography>
           </GreyText>
