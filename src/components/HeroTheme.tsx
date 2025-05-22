@@ -18,6 +18,11 @@ const StyledSection = styled.section<{ image: string }>`
   background-position: center;
   width: 100%;
   position: relative;
+  background-size: cover;
+
+  @media (max-width: 1080px) {
+    height: 144px;
+  }
 `;
 
 const StyledContent = styled.div`
