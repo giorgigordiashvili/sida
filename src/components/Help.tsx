@@ -15,7 +15,7 @@ const StyledContact = styled.div`
   flex-direction: column;
 `;
 
-export default function AboutUs({
+export default function Help({
   dictionary,
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['aboutUs'];

@@ -26,6 +26,13 @@ const H2 = styled.h2`
   }
 `;
 
+const XLBodytext = styled.p`
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 35.01px;
+  margin: 0px;
+`;
+
 const LBodytext = styled.p`
   font-weight: bold;
   font-size: 20px;
@@ -52,7 +59,7 @@ const XSBodytext = styled.p`
 `;
 
 type TypographyProps = {
-  variant: 'h1' | 'h2' | 'lBodytext' | 'mBodytext' | 'sBodytext' | 'xsBodytext';
+  variant: 'h1' | 'h2' | `xlBodytext` | 'lBodytext' | 'mBodytext' | 'sBodytext' | 'xsBodytext';
   children: React.ReactNode;
   className?: string;
 };
@@ -71,6 +78,8 @@ function Typography({ variant, children, className }: TypographyProps) {
       return <SBodytext className={className}>{children}</SBodytext>;
     case 'xsBodytext':
       return <XSBodytext className={className}>{children}</XSBodytext>;
+    case 'xlBodytext':
+      return <XLBodytext className={className}>{children}</XLBodytext>;
 
     default:
       return null;
