@@ -199,5 +199,70 @@
       "previous": "Previous",
       "next": "Next"
     }
+  },
+
+  "volunteer": {
+    "name": "Volunteer",
+    "home": "Home",
+    "volunteersInfo": [
+      {
+        "name": "Arlene McCoy",
+        "job": "Nursing Assistant",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Jenny Wilson",
+        "job": "Web Deisgner",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Robert Fox",
+        "job": "Marketing Coordinator",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Robert Fox",
+        "job": "Marketing Coordinator",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Robert Fox",
+        "job": "Marketing Coordinator",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Robert Fox",
+        "job": "Marketing Coordinator",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      }
+    ]
+  },
+  "projects": {
+    "name": "Projects",
+    "home": "Home"
   }
 }

@@ -175,6 +175,7 @@
       "text2": ""
     }
   },
+
   "projectDetails": {
     "title": "ჯანმრთელობის ინიციატივების მხარდაჭერა",
     "description": "ლორემ იპსუმი არის მხოლოდ ტესტური ტექსტი დაბეჭდვისა და ტიპოგრაფიის ინდუსტრიაში. ლორემ იპსუმი ინდუსტრიაში სტანდარტული ტესტური ტექსტია",
@@ -198,5 +199,79 @@
       "previous": "წინა",
       "next": "შემდეგი"
     }
+  },
+
+  "volunteer": {
+    "name": "მოხალისე",
+    "home": "მთავარი",
+    "volunteersInfo": [
+      {
+        "name": "არლინ მაკკოი",
+        "job": "ექთნის ასისტენტი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "ჯენი უილსონი",
+        "job": "ვებ დიზაინერი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "რობერტ ფოქსი",
+        "job": "მარკეტინგის კოორდინატორი",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      }
+    ]
+  },
+  "projects": {
+    "name": "პროექტები",
+    "home": "მთავარი"
   }
 }
