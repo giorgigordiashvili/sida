@@ -37,6 +37,9 @@ const MBodytext = styled.p`
   font-size: 18px;
   line-height: 30px;
   margin: 0px;
+  @media (max-width: 1080px) {
+    font-size: 16px;
+  }
 `;
 
 const SBodytext = styled.p`
@@ -45,6 +48,9 @@ const SBodytext = styled.p`
   margin: 0px;
   @media (max-width: 1080px) {
     font-size: 15px;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
   }
 `;
 
