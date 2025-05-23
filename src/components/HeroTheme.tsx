@@ -1,11 +1,13 @@
 'use client';
 import styled from 'styled-components';
-import { getDictionary } from '@/get-dictionary';
 import Typography from './ui/Typography';
 import Image from 'next/image';
 
-interface PageThemeProps {
-  dictionary: Awaited<ReturnType<typeof getDictionary>>['volunteer'];
+interface HeroThemeProps {
+  dictionary: {
+    name: string;
+    home: string;
+  };
   image: string;
 }
 
@@ -91,7 +93,7 @@ const StyledSmallHeart = styled.div`
   }
 `;
 
-export default function PageTheme({ dictionary, image }: PageThemeProps) {
+export default function PageTheme({ dictionary, image }: HeroThemeProps) {
   return (
     <StyledSection image={image}>
       <StyledContent>
