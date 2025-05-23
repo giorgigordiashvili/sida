@@ -176,6 +176,30 @@
       "text2": "Now"
     }
   },
+  "projectDetails": {
+    "title": "Supporting Health Initiatives",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galltype and scrambled it to make a type specimen book. It has survived not only five centuries tinto electronic typesetting remaining essentially unchanged",
+    "listOne": "Hope Restoration",
+    "listTwo": "Giving Back",
+    "listThree": "Positive Impact",
+    "bioTitle": "Elevate Your Business with IT Solutions",
+    "bioDescription": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galltype and scrambled it to make a type specimen book. It has survived not only five centuries tinto electronic typesetting remaining essentially unchanged",
+    "previoous": "Previous",
+    "next": "Next",
+    "card": {
+      "title": "Project Details",
+      "name": "Name:",
+      "nameDetail": "Water Foundation",
+      "date": "Date:",
+      "dateDetail": "23 December,2023",
+      "author": "Author:",
+      "authorDetail": "Rajin Saleh",
+      "tags": "Tags:",
+      "tagsDetail": "Water For All",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
 
   "volunteer": {
     "name": "Volunteer",

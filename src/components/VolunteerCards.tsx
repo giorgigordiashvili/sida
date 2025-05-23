@@ -13,6 +13,7 @@ const StyledContainer = styled.div`
 
   @media (max-width: 1080px) {
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
     gap: 16px;
     padding: 30px 16px 0;
   }
