@@ -58,6 +58,21 @@ const ListItem = styled.li`
   align-items: flex-start;
   margin-bottom: 15px;
   color: rgba(77, 77, 77, 1);
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
+`;
+
+const MobileListItem = styled.li`
+  display: none;
+
+  @media (max-width: 1080px) {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: rgba(77, 77, 77, 1);
+  }
 `;
 
 const CheckmarkContainer = styled.div`
@@ -231,6 +246,9 @@ export default function AboutUs({
                 <ListItemText>{listItems[selectedItem]}</ListItemText>
               </ListItem>
             )}
+            <MobileListItem>
+              <ListItemText>{listItems[selectedItem]}</ListItemText>
+            </MobileListItem>
           </StyledList>
 
           <StyledHelp>
