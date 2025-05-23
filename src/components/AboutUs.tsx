@@ -62,6 +62,21 @@ const ListItem = styled.li`
   align-items: flex-start;
   margin-bottom: 15px;
   color: rgba(77, 77, 77, 1);
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
+`;
+
+const MobileListItem = styled.li`
+  display: none;
+
+  @media (max-width: 1080px) {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: rgba(77, 77, 77, 1);
+  }
 `;
 
 const CheckmarkContainer = styled.div`
@@ -98,6 +113,7 @@ const StyledTitle = styled.div`
     }
   }
 `;
+
 const StyledBioText = styled.div`
   @media (max-width: 1080px) {
     display: none;
@@ -126,7 +142,11 @@ const StyledSwitcher = styled.div`
   }
 `;
 
-const SwitcherItem = styled.div`
+interface SwitcherItemProps {
+  selected: boolean;
+}
+
+const SwitcherItem = styled.div<SwitcherItemProps>`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -156,7 +176,7 @@ export default function AboutUs({
   const listItems = [dictionary.listOne, dictionary.listTwo, dictionary.listThree];
   const [selectedItem, setSelectedItem] = useState(0);
 
-  const handleItemClick = (index) => {
+  const handleItemClick = (index: number) => {
     setSelectedItem(index);
   };
 
@@ -169,7 +189,7 @@ export default function AboutUs({
             width={700}
             height={617}
             alt="circle"
-            objectFit="cover"
+            style={{ objectFit: 'cover' }}
           />
         </StyledImageBox>
         <StyledBioContainer>
@@ -200,7 +220,7 @@ export default function AboutUs({
 
             {/* Desktop view - show all list items */}
             {listItems.map((item, index) => (
-              <ListItem key={index} style={{ display: window.innerWidth > 1080 ? 'flex' : 'none' }}>
+              <ListItem key={index}>
                 <CheckmarkContainer>
                   <Image
                     src="/assets/images/hero/checkmarkk.svg"
@@ -213,11 +233,10 @@ export default function AboutUs({
               </ListItem>
             ))}
 
-            {window.innerWidth <= 1080 && (
-              <ListItem>
-                <ListItemText>{listItems[selectedItem]}</ListItemText>
-              </ListItem>
-            )}
+            {/* Mobile view - show only selected item */}
+            <MobileListItem>
+              <ListItemText>{listItems[selectedItem]}</ListItemText>
+            </MobileListItem>
           </StyledList>
 
           <StyledHelp>
