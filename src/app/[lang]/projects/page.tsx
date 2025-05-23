@@ -1,4 +1,5 @@
 import HeroTheme from '@/components/HeroTheme';
+import ProjectsGrid from '@/components/ProjectsGrid';
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
 
@@ -12,6 +13,7 @@ export default async function volunteer(props: { params: Promise<{ lang: Locale 
         dictionary={dictionary.projects}
         image={'/assets/images/volunteer/volunteerHero.png'}
       />
+      <ProjectsGrid />
     </>
   );
 }
