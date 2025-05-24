@@ -21,7 +21,7 @@ const H2 = styled.h2`
   line-height: 60px;
   margin: 0px;
   @media (max-width: 1080px) {
-    font-size: 24px;
+    font-size: 28px;
     line-height: 28px;
   }
 `;
@@ -37,6 +37,9 @@ const MBodytext = styled.p`
   font-size: 18px;
   line-height: 30px;
   margin: 0px;
+  @media (max-width: 1080px) {
+    font-size: 16px;
+  }
 `;
 
 const SBodytext = styled.p`
@@ -44,7 +47,16 @@ const SBodytext = styled.p`
   line-height: 34px;
   margin: 0px;
   @media (max-width: 1080px) {
-    font-size: 15px;
+    font-size: 14px;
+  }
+`;
+
+const XXSBodytext = styled.p`
+  font-size: 16px;
+  line-height: 34px;
+  margin: 0px;
+  @media (max-width: 1080px) {
+    font-size: 12px;
   }
 `;
 
@@ -55,7 +67,7 @@ const XSBodytext = styled.p`
 `;
 
 type TypographyProps = {
-  variant: 'h1' | 'h2' | 'lBodytext' | 'mBodytext' | 'sBodytext' | 'xsBodytext';
+  variant: 'h1' | 'h2' | 'lBodytext' | 'mBodytext' | 'sBodytext' | 'xsBodytext' | 'xxsBodytext';
   children: React.ReactNode;
   className?: string;
 };
@@ -74,6 +86,8 @@ function Typography({ variant, children, className }: TypographyProps) {
       return <SBodytext className={className}>{children}</SBodytext>;
     case 'xsBodytext':
       return <XSBodytext className={className}>{children}</XSBodytext>;
+    case 'xxsBodytext':
+      return <XXSBodytext className={className}>{children}</XXSBodytext>;
 
     default:
       return null;

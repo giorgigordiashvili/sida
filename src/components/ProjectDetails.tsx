@@ -183,6 +183,9 @@ const StyledButtons = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 30px;
+  @media (max-width: 1080px) {
+    margin-top: 0;
+  }
 `;
 const StyledButton = styled.div`
   display: flex;
@@ -209,25 +212,25 @@ export default function ProjectDetails({
               <StyledName>
                 <Typography variant="mBodytext">{dictionary.card.name}</Typography>
                 <GreyText>
-                  <Typography variant="sBodytext">{dictionary.card.nameDetail}</Typography>
+                  <Typography variant="xxsBodytext">{dictionary.card.nameDetail}</Typography>
                 </GreyText>
               </StyledName>
               <StyledDate>
                 <Typography variant="mBodytext">{dictionary.card.date}</Typography>
                 <GreyText>
-                  <Typography variant="sBodytext">{dictionary.card.dateDetail}</Typography>
+                  <Typography variant="xxsBodytext">{dictionary.card.dateDetail}</Typography>
                 </GreyText>
               </StyledDate>
               <StyledAuthor>
                 <Typography variant="mBodytext">{dictionary.card.author}</Typography>
                 <GreyText>
-                  <Typography variant="sBodytext">{dictionary.card.authorDetail}</Typography>
+                  <Typography variant="xxsBodytext">{dictionary.card.authorDetail}</Typography>
                 </GreyText>
               </StyledAuthor>
               <StyledTags>
                 <Typography variant="mBodytext">{dictionary.card.tags}</Typography>
                 <GreyText>
-                  <Typography variant="sBodytext">{dictionary.card.tagsDetail}</Typography>
+                  <Typography variant="xxsBodytext">{dictionary.card.tagsDetail}</Typography>
                 </GreyText>
               </StyledTags>
             </StyledCardDetails>
