@@ -22,14 +22,14 @@ const H2 = styled.h2`
   margin: 0px;
   @media (max-width: 1080px) {
     font-size: 28px;
-    line-height: 28px;
+    line-height: 40px;
   }
 `;
 
 const LBodytext = styled.p`
   font-weight: bold;
   font-size: 20px;
-  line-height: 28px;
+  line-height: 34px;
   margin: 0px;
 `;
 
@@ -48,15 +48,7 @@ const SBodytext = styled.p`
   margin: 0px;
   @media (max-width: 1080px) {
     font-size: 14px;
-  }
-`;
-
-const XXSBodytext = styled.p`
-  font-size: 16px;
-  line-height: 34px;
-  margin: 0px;
-  @media (max-width: 1080px) {
-    font-size: 12px;
+    line-height: 24px;
   }
 `;
 
@@ -64,6 +56,13 @@ const XSBodytext = styled.p`
   font-size: 14px;
   line-height: 34px;
   margin: 0px;
+`;
+
+const XXSBodytext = styled.p`
+  @media (max-width: 1080px) {
+    font-size: 12px;
+    line-height: 20px;
+  }
 `;
 
 type TypographyProps = {
