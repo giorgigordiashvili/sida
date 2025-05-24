@@ -50,6 +50,9 @@ const SBodytext = styled.p`
     font-size: 14px;
     line-height: 24px;
   }
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const XSBodytext = styled.p`
