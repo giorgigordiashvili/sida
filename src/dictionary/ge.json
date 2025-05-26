@@ -288,5 +288,25 @@
       "Turkey": "თურქეთი",
       "Indonesia": "ინდონეზია"
     }
+  },
+  "contact": {
+    "name": "კონტაქტი",
+    "home": "მთავარი"
+  },
+  "donationDetails": {
+    "name": "დონაციის დეტალები",
+    "home": "მთავარი"
+  },
+  "mail": {
+    "contactUs": "დაგვიკავშირდი",
+    "title": "ძალისმიერება საზოგადოებისთვის დონაციების გზით",
+    "emailLabel": "შენი მეილი",
+    "emailPlaceholder": "შენი მეილი...",
+    "phoneLabel": "შენი ტელეფონი",
+    "phonePlaceholder": "შენი ტელეფონი...",
+    "addressLabel": "შენი მისამართი",
+    "addressPlaceholder": "შენი მისამართი...",
+    "messageLabel": "შეტყობინება",
+    "messagePlaceholder": "დაწერე შეტყობინება..."
   }
 }
