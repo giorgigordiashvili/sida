@@ -273,5 +273,20 @@
   "projects": {
     "name": "პროექტები",
     "home": "მთავარი"
+  },
+  "donation": {
+    "name": "დონაცია",
+    "home": "მთავარი"
+  },
+  "distributor": {
+    "title": "საუკეთესო დისტრიბუტორები მსოფლიოს გარშემო",
+    "countries": {
+      "southAfrica": "სამხრეთ აფრიკა",
+      "SouthKorea": "სამხრეთ კორეა",
+      "germany": "გერმანია",
+      "Japan": "იაპონია",
+      "Turkey": "თურქეთი",
+      "Indonesia": "ინდონეზია"
+    }
   }
 }
