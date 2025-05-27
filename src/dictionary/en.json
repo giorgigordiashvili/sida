@@ -294,5 +294,14 @@
       "tag5": "Care",
       "tag6": "Helping"
     }
+  },
+  "blog": {
+    "title": "Together We Can Make a Difference",
+    "description": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
+    "tags": {
+      "admin": "By Admin",
+      "category": "Category",
+      "comments": "Comments"
+    }
   }
 }
