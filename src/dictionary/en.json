@@ -264,5 +264,35 @@
   "projects": {
     "name": "Projects",
     "home": "Home"
+  },
+  "searchBar": {
+    "title": "Search Here",
+    "placeholder": "Search...",
+    "filter": {
+      "category": "Category",
+      "donation": "Donation Drive",
+      "volunteer": "Volunteer Assistance",
+      "fundraiser": "Fundraising Event",
+      "support": "Support Network",
+      "initiative": "Philanthropic Initiative"
+    },
+    "posts": {
+      "title": "Popular Posts",
+      "post1.date": "October 19, 2022",
+      "post1": "Funding Research for a Cure Charity",
+      "post2.date": "October 20, 2022",
+      "post2": "Supporting Mental Health Initiatives Donations",
+      "post3.date": "October 21, 2022",
+      "post3": "Caring for the Elderly and Vulnerable at a Time"
+    },
+    "tags": {
+      "title": "Popular Tags",
+      "tag1": "Giving Back",
+      "tag2": "Relief Effort",
+      "tag3": "Positive Impact",
+      "tag4": "Kindness",
+      "tag5": "Care",
+      "tag6": "Helping"
+    }
   }
 }
