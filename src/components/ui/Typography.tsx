@@ -98,8 +98,6 @@ const XXSBodytext = styled.p`
 `;
 
 type TypographyProps = {
-  variant: 'h1' | 'h2' | 'lBodytext' | 'mBodytext' | 'sBodytext' | 'xsBodytext' | 'xxsBodytext';
-
   variant:
     | 'h1'
     | 'h2'
@@ -110,6 +108,7 @@ type TypographyProps = {
     | 'sBodytext'
     | 'xsBodytext'
     | 'xxsBodytext'
+    | 'caption';
   children: React.ReactNode;
   className?: string;
 };
@@ -134,7 +133,8 @@ function Typography({ variant, children, className }: TypographyProps) {
       return <XSBodytext className={className}>{children}</XSBodytext>;
     case 'xxsBodytext':
       return <XXSBodytext className={className}>{children}</XXSBodytext>;
-
+    case 'caption':
+      return <CaptionText className={className}>{children}</CaptionText>;
     default:
       return null;
   }
