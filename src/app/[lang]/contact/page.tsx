@@ -3,8 +3,8 @@ import { Locale } from '@/i18n-config';
 import HeroTheme from '@/components/HeroTheme';
 import ContactForm from '@/components/Contact';
 
-export default async function Donation(props: { params: { lang: Locale } }) {
-  const { lang } = props.params;
+export default async function Contact(props: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await props.params;
 
   const dictionary = await getDictionary(lang);
   return (

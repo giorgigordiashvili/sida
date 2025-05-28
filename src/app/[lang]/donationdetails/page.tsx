@@ -3,20 +3,20 @@ import { Locale } from '@/i18n-config';
 import HeroTheme from '@/components/HeroTheme';
 import DonationForm from '@/components/DonationForm';
 
-export default async function Donation(props: { params: { lang: Locale } }) {
-  const { lang } = props.params;
-  const dictionary = await getDictionary(lang);
+interface Props {
+  params: {
+    lang: Locale;
+  };
+}
+
+export default async function DonationDetail({ params }: Props) {
+  const dictionary = await getDictionary(params.lang);
+  const donationDetails = dictionary.donationDetails;
 
   return (
     <>
-      <HeroTheme
-        dictionary={dictionary.donationDetails}
-        image={'/assets/images/volunteer/volunteerHero.png'}
-      />
-
-      <>
-        <DonationForm dictionary={dictionary.donationDetails} />
-      </>
+      <HeroTheme dictionary={donationDetails} image="/assets/images/volunteer/volunteerHero.png" />
+      <DonationForm dictionary={donationDetails} />
     </>
   );
 }

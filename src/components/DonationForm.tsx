@@ -1,13 +1,14 @@
 'use client';
+
 import styled from 'styled-components';
-import InputWithIcon from './Input/InputWithIcon';
+import { useState } from 'react';
 import Typography from '@/components/ui/Typography';
 import PaymentOption from '@/components/PaymentOption';
 import SelectAmountWrapper from '@/components/SelectAmountWrapper';
-import { getDictionary } from '@/get-dictionary';
+import InputWithIcon from './Input/InputWithIcon';
 import InputMoney from './Input/InputMoney';
 import Total from './Total';
-import { useState } from 'react';
+import { getDictionary } from '@/get-dictionary';
 
 const StyledSection = styled.section`
   width: 100%;
