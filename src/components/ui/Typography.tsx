@@ -60,6 +60,18 @@ const XSBodytext = styled.p`
   line-height: 34px;
   margin: 0px;
 `;
+const H3 = styled.h3`
+  font-family: 'Jost';
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  color: #1f1f1f;
+  margin: 0px;
+  @media (max-width: 1080px) {
+    font-size: 20px;
+  }
+`;
+
 const H4 = styled.h4`
   font-weight: 700;
   font-size: 20px;
@@ -82,20 +94,35 @@ const CaptionText = styled.p`
     line-height: 20px;
   }
 `;
+const Label = styled.p`
+  font-family: 'Jost';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: #4d4d4d;
+
+  @media (max-width: 1080px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+`;
 
 type TypographyProps = {
   variant:
     | 'h1'
     | 'h2'
+    | 'h3'
     | 'h4'
     | 'xlBodytext'
     | 'lBodytext'
     | 'mBodytext'
     | 'sBodytext'
     | 'xsBodytext'
-    | 'caption';
+    | 'caption'
+    | 'label';
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 };
 
 function Typography({ variant, children, className }: TypographyProps) {
@@ -104,6 +131,8 @@ function Typography({ variant, children, className }: TypographyProps) {
       return <H1 className={className}>{children}</H1>;
     case 'h2':
       return <H2 className={className}>{children}</H2>;
+    case 'h3':
+      return <H3 className={className}>{children}</H3>;
     case 'h4':
       return <H4 className={className}>{children}</H4>;
     case 'xlBodytext':
@@ -118,6 +147,8 @@ function Typography({ variant, children, className }: TypographyProps) {
       return <XSBodytext className={className}>{children}</XSBodytext>;
     case 'caption':
       return <CaptionText className={className}>{children}</CaptionText>;
+    case 'label':
+      return <Label className={className}>{children}</Label>;
     default:
       return null;
   }
