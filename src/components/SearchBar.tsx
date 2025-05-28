@@ -10,6 +10,10 @@ const StyledContainer = styled.div`
   gap: 30px;
   width: 410px;
   margin-left: auto;
+  @media (max-width: 1080px) {
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 const StyledSearchBar = styled.div`
@@ -22,6 +26,15 @@ const StyledSearchBar = styled.div`
   border-radius: 20px;
   gap: 30px;
   box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.05);
+  @media (max-width: 1080px) {
+    width: 100%;
+    margin: auto;
+    margin-left: 0;
+    border-radius: 0;
+    height: 162px;
+    padding: 30px 16px;
+    gap: 15px;
+  }
 `;
 
 const StyledInputWrapper = styled.div`
@@ -36,10 +49,15 @@ const StyledInput = styled.input`
   border-radius: 999px;
   font-size: 16px;
   border: none;
+  @media (max-width: 1080px) {
+    height: 48px;
+    padding: 13px 20px;
+  }
   &:focus {
     outline: none;
   }
 `;
+
 const StyledPlaceHolder = styled.div`
   position: absolute;
   left: 20px;
@@ -58,6 +76,9 @@ const StyledTitle = styled.div`
   display: flex;
   padding-bottom: 18px;
   border-bottom: 1px solid rgba(227, 227, 227, 1);
+  @media (max-width: 1080px) {
+    padding-bottom: 15px;
+  }
 `;
 
 const StyledCategory = styled.div`
@@ -70,6 +91,9 @@ const StyledCategory = styled.div`
   margin-left: auto;
   border-radius: 20px;
   width: 410px;
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const StyledTags = styled.div`
@@ -82,6 +106,9 @@ const StyledTags = styled.div`
   margin-left: auto;
   border-radius: 20px;
   width: 410px;
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 
 const StyledTag = styled.div`
@@ -109,6 +136,9 @@ const StyledPopularPost = styled.div`
   margin-left: auto;
   border-radius: 20px;
   width: 410px;
+  @media (max-width: 1080px) {
+    display: none;
+  }
 `;
 const StyledPostCard = styled.div`
   display: flex;
