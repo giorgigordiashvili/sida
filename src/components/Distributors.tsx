@@ -3,16 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 import DistributorCard from './DistributorCard';
 import Typography from './ui/Typography';
-const StyledSection = styled.section`
-  width: 100%;
-  margin: auto;
-  margin-bottom: -120px;
-
-  @media (max-width: 1080px) {
-    margin-bottom: -60px;
-    display: flex;
-  }
-`;
 
 const Wrapper = styled.section`
   padding: 120px;
@@ -20,8 +10,11 @@ const Wrapper = styled.section`
   width: 100%;
   min-height: 593px;
   background: #f2f0ec;
+  margin-bottom: -120px;
+
   @media (max-width: 1080px) {
     padding: 30px 75px 60px 75px;
+    margin-bottom: -60px;
   }
 `;
 
@@ -86,19 +79,17 @@ const Distributors: React.FC<Props> = ({ dictionary }) => {
   ];
 
   return (
-    <StyledSection>
-      <Wrapper>
-        <Typography variant="h2">
-          Top Distributors <span style={{ color: '#E26D5A' }}>Around</span> World
-        </Typography>
+    <Wrapper>
+      <Typography variant="h2">
+        Top Distributors <span style={{ color: '#E26D5A' }}>Around</span> World
+      </Typography>
 
-        <Grid>
-          {distributors.map((dist, index) => (
-            <DistributorCard key={index} name={dist.name} imageSrc={dist.image} />
-          ))}
-        </Grid>
-      </Wrapper>
-    </StyledSection>
+      <Grid>
+        {distributors.map((dist, index) => (
+          <DistributorCard key={index} name={dist.name} imageSrc={dist.image} />
+        ))}
+      </Grid>
+    </Wrapper>
   );
 };
 
