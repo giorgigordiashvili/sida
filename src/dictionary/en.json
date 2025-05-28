@@ -29,7 +29,46 @@
 
   "talkingAboutUs": {
     "title": "About Us",
-    "text": "What They are Talking About Us "
+    "text": "What They are Talking About Us",
+    "btn": "VIEW MORE",
+    "testimonials": [
+      {
+        "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
+        "author": "Nina Kraviz",
+        "role": "Nursing Assistant",
+        "avatar": "/assets/images/pfp.svg"
+      },
+      {
+        "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
+        "author": "Robert Fox",
+        "role": "Volunteer",
+        "avatar": "/assets/images/pfp.svg"
+      },
+      {
+        "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
+        "author": "Solomon DK",
+        "role": "Doctor",
+        "avatar": "/assets/images/pfp.svg"
+      },
+      {
+        "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
+        "author": "Solomon DK",
+        "role": "Doctor",
+        "avatar": "/assets/images/pfp.svg"
+      },
+      {
+        "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
+        "author": "Robert Fox",
+        "role": "Volunteer",
+        "avatar": "/assets/images/pfp.svg"
+      },
+      {
+        "text": "Listened carefully to Lisa's needs and translated them into a stunning is a website. The design is modern and to calming, with beautiful imagery that captures the essence of Blooming",
+        "author": "gela mamageishvili",
+        "role": "Volunteer",
+        "avatar": "/assets/images/pfp.svg"
+      }
+    ]
   },
 
   "members": {
@@ -160,5 +199,106 @@
       "previous": "Previous",
       "next": "Next"
     }
+  },
+
+  "volunteer": {
+    "name": "Volunteer",
+    "home": "Home",
+    "volunteersInfo": [
+      {
+        "name": "Arlene McCoy",
+        "job": "Nursing Assistant",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Jenny Wilson",
+        "job": "Web Deisgner",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Robert Fox",
+        "job": "Marketing Coordinator",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Robert Fox",
+        "job": "Marketing Coordinator",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Robert Fox",
+        "job": "Marketing Coordinator",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      },
+      {
+        "name": "Robert Fox",
+        "job": "Marketing Coordinator",
+        "facebook": "/",
+        "instagram": "/",
+        "twitter": "/",
+        "linkedIn": "/",
+        "img": "/assets/images/pfp.svg"
+      }
+    ]
+  },
+  "projects": {
+    "name": "Projects",
+    "home": "Home"
+  },
+  "donation": {
+    "name": "Donation",
+    "home": "Home"
+  },
+
+  "distributor": {
+    "title": "Top Distributors Around World",
+    "countries": {
+      "southAfrica": "South Africa",
+      "SouthKorea": "South Korea",
+      "germany": "Germany",
+      "Japan": "Japan",
+      "Turkey": "Turkey",
+      "Indonesia": "Indonesia"
+    }
+  },
+  "contact": {
+    "name": "Contact",
+    "home": "Home"
+  },
+  "donationDetails": {
+    "name": "Donation Details",
+    "home": "Home"
+  },
+  "mail": {
+    "contactUs": "Contact Us",
+    "title": "Empowering Communities through Donations",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "Your email...",
+    "phoneLabel": "Your Phone",
+    "phonePlaceholder": "Your phone...",
+    "addressLabel": "Your Address",
+    "addressPlaceholder": "Your address...",
+    "messageLabel": "Message",
+    "messagePlaceholder": "write message.."
   }
 }

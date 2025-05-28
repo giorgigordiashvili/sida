@@ -6,8 +6,6 @@ import StatsCard from './StatsCard';
 import MemberCard from './MemberCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -18,11 +16,13 @@ const StyledSection = styled.section`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 
   @media (max-width: 1080px) {
     flex-direction: column;
     gap: 30px;
     align-items: center;
+    margin-top: 30px;
   }
 `;
 
@@ -91,7 +91,7 @@ const CarouselContainer = styled.div`
 
   @media (max-width: 1080px) {
     display: block;
-    width: 100%;
+    width: 540px;
     position: relative;
     padding: 20px 0;
     overflow: hidden;
@@ -99,7 +99,7 @@ const CarouselContainer = styled.div`
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
-  opacity: 0.3;
+  opacity: 0.6;
   transition: opacity 0.5s ease;
   display: flex;
   justify-content: center;

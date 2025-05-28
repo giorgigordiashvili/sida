@@ -9,9 +9,9 @@ import styled from 'styled-components';
 type CardPosition = 'active' | 'left' | 'right' | 'far-left' | 'far-right';
 
 interface CardWrapperProps {
-  isActive: boolean;
-  position: CardPosition;
-  totalCards: number;
+  $isActive: boolean;
+  $position: CardPosition;
+  $totalCards: number;
 }
 
 // ---- Styled Components ----
@@ -107,29 +107,29 @@ const CardWrapper = styled.div<CardWrapperProps>`
   @media (max-width: 1080px) {
     flex: 0 0 auto;
     position: absolute;
-    opacity: ${({ isActive, position }) => {
-      if (isActive) return 1;
-      if (position === 'left' || position === 'right') return 0.7;
+    opacity: ${({ $isActive, $position }) => {
+      if ($isActive) return 1;
+      if ($position === 'left' || $position === 'right') return 0.7;
       return 0.4;
     }};
-    z-index: ${({ isActive, position }) => {
-      if (isActive) return 10;
-      if (position === 'left' || position === 'right') return 5;
+    z-index: ${({ $isActive, $position }) => {
+      if ($isActive) return 10;
+      if ($position === 'left' || $position === 'right') return 5;
       return 1;
     }};
     cursor: pointer;
     top: 50%;
     transform-origin: center center;
-    transform: ${({ isActive, position }) => {
+    transform: ${({ $isActive, $position }) => {
       const baseTransform = 'translateY(-50%) ';
-      if (isActive) {
+      if ($isActive) {
         return baseTransform + 'translateX(0) scale(1) translateZ(0)';
-      } else if (position === 'left') {
+      } else if ($position === 'left') {
         return baseTransform + 'translateX(-250px) scale(0.85) translateZ(-100px)';
-      } else if (position === 'right') {
+      } else if ($position === 'right') {
         return baseTransform + 'translateX(250px) scale(0.85) translateZ(-100px)';
       }
-      return position === 'far-left'
+      return $position === 'far-left'
         ? baseTransform + 'translateX(-500px) scale(0.7) translateZ(-200px)'
         : baseTransform + 'translateX(500px) scale(0.7) translateZ(-200px)';
     }};
@@ -239,9 +239,9 @@ export default function NewsArticles({
           newsItems.map((item) => (
             <CardWrapper
               key={item.id}
-              isActive={false}
-              position="active"
-              totalCards={newsItems.length}
+              $isActive={false}
+              $position="active"
+              $totalCards={newsItems.length}
             >
               <NewsCard
                 title={item.title}
@@ -261,9 +261,9 @@ export default function NewsArticles({
               return (
                 <CardWrapper
                   key={item.id}
-                  isActive={isActive}
-                  position={position}
-                  totalCards={newsItems.length}
+                  $isActive={isActive}
+                  $position={position}
+                  $totalCards={newsItems.length}
                   onClick={() => handleCardClick(index)}
                 >
                   <NewsCard
