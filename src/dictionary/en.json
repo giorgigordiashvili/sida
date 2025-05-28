@@ -264,5 +264,37 @@
   "projects": {
     "name": "Projects",
     "home": "Home"
+  },
+  "pageAboutUs": {
+    "aboutUs": "ABOUT US",
+    "title": "Unite for a Cause Change the World",
+    "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.",
+    "donateButton": "DONATE NOW",
+    "textButtons": {
+      "first": {
+        "button": "Our Mission",
+        "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas."
+      },
+      "second": {
+        "button": "Our Vision",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      },
+      "third": {
+        "button": "Our Goal",
+        "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate."
+      }
+    },
+    "help": "Need Help?",
+    "number": "(319) 555-0115",
+
+    "donateNow": {
+      "text1": "Donate",
+      "text2": "Now"
+    },
+    "card": {
+      "number": "250+",
+      "text": "Services we provide",
+      "img": "/assets/images/aboutUs/cardImage.png"
+    }
   }
 }
