@@ -8,6 +8,10 @@ const PaymentWrapper = styled.div`
   gap: 40px;
   align-items: center;
   margin-bottom: 30px;
+
+  @media (max-width: 1080px) {
+    margin-bottom: 0px;
+  }
 `;
 
 const Option = styled.label<{ selected: boolean }>`

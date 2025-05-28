@@ -11,15 +11,18 @@ const Wrapper = styled.div`
 `;
 
 const Input = styled.input`
-  max-width: 100%;
-  width: 409px;
+  width: 100%;
+  max-width: 409px;
   padding: 23px 164px;
   border-radius: 20px;
   border: 2px solid #ffffff;
   outline: none;
   height: 80px;
   font-size: 24px;
-
+  @media (max-width: 1080px) {
+    padding: 11px 20px;
+    height: 42px;
+  }
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;

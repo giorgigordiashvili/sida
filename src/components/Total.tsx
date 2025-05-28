@@ -4,6 +4,9 @@ import styled from 'styled-components';
 
 const TotalWrapper = styled.div`
   margin-top: 30px;
+  @media (max-width: 1080px) {
+    margin-top: 0px;
+  }
 `;
 
 const Label = styled.span`
@@ -12,6 +15,10 @@ const Label = styled.span`
   font-size: 20px;
   line-height: 34px;
   color: #1f1f1f;
+  @media (max-width: 1080px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 const TotalAmount = styled.span`
@@ -20,6 +27,10 @@ const TotalAmount = styled.span`
   font-size: 24px;
   line-height: 34px;
   color: #4d4d4d;
+  @media (max-width: 1080px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 const Total: React.FC<{

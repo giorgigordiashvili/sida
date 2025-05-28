@@ -8,8 +8,10 @@ const AmountWrapper = styled.div`
   gap: 20px;
   align-items: center;
   margin-top: 20px;
+  @media (max-width: 1080px) {
+    gap: 10px;
+  }
 `;
-
 const AmountButton = styled.button<{ selected: boolean }>`
   padding: 23px 4px;
   border-radius: 20px;
@@ -26,6 +28,17 @@ const AmountButton = styled.button<{ selected: boolean }>`
 
   &:hover {
     border: 2px solid #e26d5a;
+  }
+  @media (max-width: 1080px) {
+    width: 70px;
+    height: 40px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    &:hover {
+      background: #e26d5a;
+      color: #ffffff;
+    }
   }
 `;
 

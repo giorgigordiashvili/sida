@@ -74,6 +74,13 @@ const OrText = styled.div`
   color: #4d4d4d;
   margin-top: 40px;
   line-height: 34px;
+
+  @media (max-width: 1080px) {
+    font-size: 14px;
+    margin-top: 0px;
+    margin: 0 auto;
+    line-height: 20px;
+  }
 `;
 
 export default function DonationForm({
