@@ -332,5 +332,9 @@
     "addressPlaceholder": "Your address...",
     "messageLabel": "Message",
     "messagePlaceholder": "write message.."
+  },
+  "donations": {
+    "title": "Charity Fund",
+    "text": "Together We Can Make a Difference"
   }
 }

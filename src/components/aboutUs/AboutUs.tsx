@@ -54,6 +54,9 @@ const StyledLeft = styled.div`
 const StyledRight = styled.div`
   max-width: 578px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
   & > p:first-of-type {
     color: rgba(226, 109, 90, 1);
@@ -114,11 +117,11 @@ const ButtonWrapper = styled.div<{ $isActive: boolean; $position: number }>`
 const StyledTabContent = styled.div`
   margin: 20px 0;
   animation: ${fadeIn} 0.4s ease;
-  text-align: center;
 
   @media (max-width: 1080px) {
     max-width: 308px;
     width: 100%;
+    text-align: center;
   }
 `;
 

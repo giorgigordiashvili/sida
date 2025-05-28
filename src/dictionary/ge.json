@@ -340,5 +340,9 @@
     "addressPlaceholder": "შენი მისამართი...",
     "messageLabel": "შეტყობინება",
     "messagePlaceholder": "დაწერე შეტყობინება..."
+  },
+  "donations": {
+    "title": "ქველმოქმედების ფონდი",
+    "text": "ერთად ჩვენ შევცვლით მომავალს"
   }
 }
