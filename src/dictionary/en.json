@@ -296,5 +296,41 @@
       "text": "Services we provide",
       "img": "/assets/images/aboutUs/cardImage.png"
     }
+  },
+  "donation": {
+    "name": "Donation",
+    "home": "Home"
+  },
+
+  "distributor": {
+    "title": "Top Distributors Around World",
+    "countries": {
+      "southAfrica": "South Africa",
+      "SouthKorea": "South Korea",
+      "germany": "Germany",
+      "Japan": "Japan",
+      "Turkey": "Turkey",
+      "Indonesia": "Indonesia"
+    }
+  },
+  "contact": {
+    "name": "Contact",
+    "home": "Home"
+  },
+  "donationDetails": {
+    "name": "Donation Details",
+    "home": "Home"
+  },
+  "mail": {
+    "contactUs": "Contact Us",
+    "title": "Empowering Communities through Donations",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "Your email...",
+    "phoneLabel": "Your Phone",
+    "phonePlaceholder": "Your phone...",
+    "addressLabel": "Your Address",
+    "addressPlaceholder": "Your address...",
+    "messageLabel": "Message",
+    "messagePlaceholder": "write message.."
   }
 }
