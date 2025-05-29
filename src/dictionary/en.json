@@ -318,5 +318,30 @@
         "Indonesia": "Indonesia"
       }
     }
+  },
+  "blogDetails": {
+    "title": "Explore the world like never before travel experience ",
+    "description": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
+    "tags": {
+      "admin": "By Admin",
+      "category": "Category",
+      "comments": "Comments"
+    },
+    "comment": {
+      "comment": "Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere vive rra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentu m ul amcorper viverra laoreet.",
+      "name": "Mark wood"
+    },
+    "bio": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have"
+  },
+  "keywords": {
+    "keyword": "Keyword:",
+    "word1": "Relief Effort",
+    "word2": "Kindness",
+    "word3": "Helping"
+  },
+  "tags": {
+    "tag": "Tags:",
+    "tag1": "Donation",
+    "tag2": "Charity"
   }
 }

@@ -5,30 +5,35 @@ const StyledPaginationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  margin-top: 60px;
-  padding: 20px 0;
+  gap: 9px;
+  margin-top: 30px;
+  @media (max-width: 1080px) {
+    gap: 20px;
+  }
 `;
 
 const StyledPageButton = styled.button<{ isActive?: boolean }>`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid ${(props) => (props.isActive ? '#FF6B6B' : '#E5E5E5')};
+  border: 2px solid ${(props) => (props.isActive ? '#FF6B6B' : 'rgba(227, 227, 227, 1)')};
   background-color: ${(props) => (props.isActive ? 'transparent' : '#F8F8F8')};
-  color: ${(props) => (props.isActive ? '#FF6B6B' : '#666666')};
-  font-size: 18px;
-  font-weight: 600;
+  color: ${(props) => (props.isActive ? '#FF6B6B' : 'rgba(31, 31, 31, 1)')};
+  font-size: 20px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  @media (max-width: 1080px) {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
   &:hover {
-    border-color: #ff6b6b;
-    color: #ff6b6b;
-    transform: translateY(-2px);
+    border-color: rgba(226, 109, 90, 1);
+    color: #000;
   }
 
   &:disabled {
