@@ -301,7 +301,22 @@
     "tags": {
       "admin": "By Admin",
       "category": "Category",
-      "comments": "Comments"
+      "comments": "Comments",
+      "donation": {
+        "name": "Donation",
+        "home": "Home"
+      }
+    },
+    "distributor": {
+      "title": "Top Distributors Around World",
+      "countries": {
+        "southAfrica": "South Africa",
+        "SouthKorea": "South Korea",
+        "germany": "Germany",
+        "Japan": "Japan",
+        "Turkey": "Turkey",
+        "Indonesia": "Indonesia"
+      }
     }
   }
 }
