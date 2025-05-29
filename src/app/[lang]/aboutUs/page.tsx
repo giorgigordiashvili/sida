@@ -3,6 +3,8 @@ import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
 import AboutUs from '@/components/aboutUs/AboutUs';
 import Donations from '@/components/aboutUs/Donations';
+import DonationSection from '@/components/aboutUs/DonationSection';
+import ColoredCards from '@/components/aboutUs/ColoredCards';
 
 export default async function volunteer(props: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await props.params;
@@ -16,6 +18,8 @@ export default async function volunteer(props: { params: Promise<{ lang: Locale 
       />
       <AboutUs dictionary={dictionary.pageAboutUs} />
       <Donations dictionary={dictionary.donations} />
+      <DonationSection dictionary={dictionary.donationSection} />
+      <ColoredCards dictionary={dictionary.coloredCard} />
     </>
   );
 }

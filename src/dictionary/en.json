@@ -336,5 +336,52 @@
   "donations": {
     "title": "Charity Fund",
     "text": "Together We Can Make a Difference"
+  },
+  "donationSection": {
+    "donateButton": "DONATE NOW",
+    "cards": [
+      {
+        "img": "/assets/images/pfp.svg",
+        "title": "Help For Ecosystem",
+        "text": "Charity and donation is a category that involves giving financial support.",
+        "raisedText": "Raised",
+        "raisedNumber": 40802,
+        "goalText": "Goal",
+        "goalNumber": 100000
+      },
+      {
+        "img": "/assets/images/pfp.svg",
+        "title": "Water For All",
+        "text": "Charity and donation is a category that ensures access to clean water globally.",
+        "raisedText": "Raised",
+        "raisedNumber": 20802,
+        "goalText": "Goal",
+        "goalNumber": 100000
+      },
+      {
+        "img": "/assets/images/pfp.svg",
+        "title": "Vaccine Aid Camp",
+        "text": "Charity and donation is a category that supports healthcare and vaccines.",
+        "raisedText": "Raised",
+        "raisedNumber": 90802,
+        "goalText": "Goal",
+        "goalNumber": 100000
+      }
+    ]
+  },
+
+  "coloredCard": {
+    "firstCard": {
+      "color": "orange",
+      "title": "Help Them With Donation",
+      "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo",
+      "buttonText": "DONATE NOW"
+    },
+    "secondCard": {
+      "color": "green",
+      "title": "Join With Us To Serve As Volenteer",
+      "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo",
+      "buttonText": "JOIN NOW"
+    }
   }
 }

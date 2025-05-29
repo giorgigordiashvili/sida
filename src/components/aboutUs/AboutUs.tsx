@@ -231,10 +231,7 @@ export default function AboutUs({
           </StyledTabContent>
 
           <StyledNav>
-            <SecondDonateBtn
-              text1={dictionary.donateNow.text1}
-              text2={dictionary.donateNow.text2}
-            />
+            <SecondDonateBtn text1={dictionary.donateNow.text1} />
             <Help helpText={dictionary.help} phoneNumber={dictionary.number} />
           </StyledNav>
         </StyledRight>
