@@ -350,7 +350,18 @@
       "replies": "(1) Replies",
       "reply": "Reply"
     },
-    "bio": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have"
+    "bio": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
+    "commentCreate": {
+      "title": "Add a comment",
+      "bio": "By using the form, you agree to the storage of your message. You can contact us directly now.",
+      "placeholders": {
+        "name": "Your Name",
+        "email": "Your Email",
+        "website": "Your Website",
+        "comment": "Write your message"
+      },
+      "checkbox": "Save my name, email and website"
+    }
   },
   "keywords": {
     "keyword": "Keyword:",

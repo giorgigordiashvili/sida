@@ -4,19 +4,30 @@ import { getDictionary } from '@/get-dictionary';
 import SearchBar from '@/components/SearchBar';
 import Typography from '@/components/ui/Typography';
 import Image from 'next/image';
+import InputWithIcon from '@/components/Input/InputWithIcon';
+import TextAreaWithIcon from './Input/TextAreaWithIcon';
 
 const StyledContainer = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(850px, 2fr) minmax(410px, 1fr);
   max-width: 1290px;
   margin: auto;
   margin-top: 120px;
+  gap: 30px;
+  @media (max-width: 1080px) {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    gap: 20px;
+  }
 `;
 
 const StyledLeftContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  @media (max-width: 1080px) {
+    order: 1;
+  }
 `;
 const StyledBlogCard = styled.div`
   display: flex;
@@ -128,8 +139,52 @@ const StyledInfos = styled.div`
 
 const StyledAuthor = styled.div`
   color: rgba(77, 77, 77, 1);
-  font-weight: 700;
+& > :first-child {
+    font-weight: 700;'}`;
+
+const StyledReply = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: rgba(226, 109, 90, 1);
+  & > *:last-child {
+    font-weight: 700;
+  }
 `;
+
+const StyledCreateComm = styled.div`
+  padding: 60px 40px;
+  background-color: rgba(242, 240, 236, 1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;
+
+const StyledTitleComm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  & > *:first-child {
+    font-weight: 700;
+  }
+`;
+
+const StyledInputs = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+const Checkbox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
+const StyledTextInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+const StyledTextArea = styled.div``;
 export default function BlogDetails({
   searchBar,
   blogDetails,
@@ -191,12 +246,68 @@ export default function BlogDetails({
           <StyledInfos>
             <StyledAuthor>
               <Typography variant="sBodytext">{blogDetails.commentDetails.author}</Typography>
+              <Typography variant="sBodytext">{blogDetails.commentDetails.date}</Typography>
             </StyledAuthor>
             <StyledComment>
               <Typography variant="sBodytext">{blogDetails.comment.comment}</Typography>
             </StyledComment>
+            <StyledReply>
+              <Typography variant="sBodytext">{blogDetails.commentDetails.replies}</Typography>
+              <Typography variant="sBodytext">{blogDetails.commentDetails.reply}</Typography>
+            </StyledReply>
           </StyledInfos>
         </StyledComments>
+        <StyledComments>
+          <StyledAvatarWrapper></StyledAvatarWrapper>
+          <StyledInfos>
+            <StyledAuthor>
+              <Typography variant="sBodytext">{blogDetails.commentDetails.author}</Typography>
+              <Typography variant="sBodytext">{blogDetails.commentDetails.date}</Typography>
+            </StyledAuthor>
+            <StyledComment>
+              <Typography variant="sBodytext">{blogDetails.comment.comment}</Typography>
+            </StyledComment>
+            <StyledReply>
+              <Typography variant="sBodytext">{blogDetails.commentDetails.reply}</Typography>
+            </StyledReply>
+          </StyledInfos>
+        </StyledComments>
+        <StyledCreateComm>
+          <StyledTitleComm>
+            <Typography variant="h2">{blogDetails.commentCreate.title}</Typography>
+            <Typography variant="sBodytext">{blogDetails.commentCreate.bio}</Typography>
+          </StyledTitleComm>
+          <StyledTextInput>
+            <StyledInputs>
+              <InputWithIcon
+                width="248px"
+                label=""
+                placeholder={blogDetails.commentCreate.placeholders.name}
+              />
+              <InputWithIcon
+                width="248px"
+                label=""
+                placeholder={blogDetails.commentCreate.placeholders.email}
+              />
+              <InputWithIcon
+                width="248px"
+                label=""
+                placeholder={blogDetails.commentCreate.placeholders.website}
+              />
+            </StyledInputs>
+            <StyledTextArea>
+              <TextAreaWithIcon
+                width="764px"
+                label=""
+                placeholder={blogDetails.commentCreate.placeholders.comment}
+              ></TextAreaWithIcon>
+            </StyledTextArea>
+          </StyledTextInput>
+          <Checkbox>
+            <input type="checkbox" />
+            <Typography variant="sBodytext">{blogDetails.commentCreate.checkbox}</Typography>
+          </Checkbox>
+        </StyledCreateComm>
       </StyledLeftContent>
       <SearchBar dictionary={searchBar} />
     </StyledContainer>
