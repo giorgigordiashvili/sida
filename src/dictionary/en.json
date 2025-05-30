@@ -343,5 +343,26 @@
     "tag": "Tags:",
     "tag1": "Donation",
     "tag2": "Charity"
+},
+  "contact": {
+    "name": "Contact",
+    "home": "Home"
+  },
+  "donationDetails": {
+    "name": "Donation Details",
+    "home": "Home"
+  },
+  "mail": {
+    "contactUs": "Contact Us",
+    "title": "Empowering Communities through Donations",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "Your email...",
+    "phoneLabel": "Your Phone",
+    "phonePlaceholder": "Your phone...",
+    "addressLabel": "Your Address",
+    "addressPlaceholder": "Your address...",
+    "messageLabel": "Message",
+    "messagePlaceholder": "write message.."
+
   }
 }
