@@ -13,6 +13,11 @@ const StyledContainer = styled.div`
   margin-top: 120px;
 `;
 
+const StyledLeftContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;
 const StyledBlogCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -68,6 +73,63 @@ const StyledCommentWrapper = styled.div`
 const StyledComment = styled.div`
   color: rgba(77, 77, 77, 1);
 `;
+
+const StyledTagsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 0;
+`;
+
+const StyledKeywords = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
+const StyleTags = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+const StyledTitle = styled.div`
+  color: rgba(77, 77, 77, 1);
+  font-weight: 700;
+`;
+
+const StyledWords = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+
+const StyledWord = styled.div`
+  background-color: rgba(242, 240, 236, 1);
+  padding: 10px;
+  border-radius: 10px;
+  color: rgba(77, 77, 77, 1);
+`;
+const StyledComments = styled.div`
+  display: flex;
+  gap: 30px;
+`;
+
+const StyledAvatarWrapper = styled.div`
+  background-color: rgba(217, 217, 217, 1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+`;
+
+const StyledInfos = styled.div`
+  max-width: 740px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledAuthor = styled.div`
+  color: rgba(77, 77, 77, 1);
+  font-weight: 700;
+`;
 export default function BlogDetails({
   searchBar,
   blogDetails,
@@ -77,26 +139,28 @@ export default function BlogDetails({
 }) {
   return (
     <StyledContainer>
-      <StyledBlogCard>
-        <StyledImageWrapper></StyledImageWrapper>
-        <StyledTags>
-          <StyledTag>
-            <Image src="/assets/images/blog/user.svg" alt="user" width={16} height={16} />
-            <Typography variant="sBodytext">{blogDetails.tags.admin}</Typography>
-          </StyledTag>
-          <StyledTag>
-            <Image src="/assets/images/blog/category.svg" alt="category" width={16} height={16} />
-            <Typography variant="sBodytext">{blogDetails.tags.category}</Typography>
-          </StyledTag>
-          <StyledTag>
-            <Image src="/assets/images/blog/comments.svg" alt="comments" width={16} height={16} />
-            <Typography variant="sBodytext">{blogDetails.tags.comments}</Typography>
-          </StyledTag>
-        </StyledTags>
-        <StyledBio>
-          <Typography variant="h2">{blogDetails.title}</Typography>
-          <Typography variant="sBodytext">{blogDetails.description}</Typography>
-        </StyledBio>
+      <StyledLeftContent>
+        <StyledBlogCard>
+          <StyledImageWrapper></StyledImageWrapper>
+          <StyledTags>
+            <StyledTag>
+              <Image src="/assets/images/blog/user.svg" alt="user" width={16} height={16} />
+              <Typography variant="sBodytext">{blogDetails.tags.admin}</Typography>
+            </StyledTag>
+            <StyledTag>
+              <Image src="/assets/images/blog/category.svg" alt="category" width={16} height={16} />
+              <Typography variant="sBodytext">{blogDetails.tags.category}</Typography>
+            </StyledTag>
+            <StyledTag>
+              <Image src="/assets/images/blog/comments.svg" alt="comments" width={16} height={16} />
+              <Typography variant="sBodytext">{blogDetails.tags.comments}</Typography>
+            </StyledTag>
+          </StyledTags>
+          <StyledBio>
+            <Typography variant="h2">{blogDetails.title}</Typography>
+            <Typography variant="sBodytext">{blogDetails.description}</Typography>
+          </StyledBio>
+        </StyledBlogCard>
         <StyledCommentWrapper>
           <StyledComment>
             <Typography variant="sBodytext">{blogDetails.comment.comment}</Typography>
@@ -105,7 +169,35 @@ export default function BlogDetails({
         <StyledBio>
           <Typography variant="sBodytext">{blogDetails.description}</Typography>
         </StyledBio>
-      </StyledBlogCard>
+        <StyledTagsContainer>
+          <StyledKeywords>
+            <StyledTitle>{blogDetails.keywords.keyword}</StyledTitle>
+            <StyledWords>
+              <StyledWord>{blogDetails.keywords.word1}</StyledWord>
+              <StyledWord>{blogDetails.keywords.word2}</StyledWord>
+              <StyledWord>{blogDetails.keywords.word3}</StyledWord>
+            </StyledWords>
+          </StyledKeywords>
+          <StyleTags>
+            <StyledTitle>{blogDetails.keywordTags.tag}</StyledTitle>
+            <StyledWords>
+              <StyledWord>{blogDetails.keywordTags.tag1}</StyledWord>
+              <StyledWord>{blogDetails.keywordTags.tag2}</StyledWord>
+            </StyledWords>
+          </StyleTags>
+        </StyledTagsContainer>
+        <StyledComments>
+          <StyledAvatarWrapper></StyledAvatarWrapper>
+          <StyledInfos>
+            <StyledAuthor>
+              <Typography variant="sBodytext">{blogDetails.commentDetails.author}</Typography>
+            </StyledAuthor>
+            <StyledComment>
+              <Typography variant="sBodytext">{blogDetails.comment.comment}</Typography>
+            </StyledComment>
+          </StyledInfos>
+        </StyledComments>
+      </StyledLeftContent>
       <SearchBar dictionary={searchBar} />
     </StyledContainer>
   );

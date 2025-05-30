@@ -58,12 +58,6 @@ const StyledInput = styled.input`
   }
 `;
 
-const StyledPlaceHolder = styled.div`
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-`;
 const StyledIcon = styled(Image)`
   position: absolute;
   right: 20px;
@@ -172,8 +166,7 @@ export default function SearchBar({
           <Typography variant="lBodytext">{dictionary.title}</Typography>
         </StyledTitle>
         <StyledInputWrapper>
-          <StyledInput type="text" />
-          <StyledPlaceHolder>{dictionary.placeholder}</StyledPlaceHolder>
+          <StyledInput type="text" placeholder={dictionary.placeholder} />
           <StyledIcon
             src="/assets/images/searchBar/searchIcon.svg"
             alt="Search Icon"
