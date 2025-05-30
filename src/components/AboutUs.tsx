@@ -255,7 +255,7 @@ export default function AboutUs({
             <StyledDonateButton>
               <DonateButton text1={dictionary.donateNow.text1} text2={dictionary.donateNow.text2} />
             </StyledDonateButton>
-            <Help dictionary={dictionary} />
+            <Help helpText={dictionary.help} phoneNumber={dictionary.number} />
           </StyledHelp>
         </StyledBioContainer>
       </Container>

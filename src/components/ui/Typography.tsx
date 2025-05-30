@@ -38,12 +38,20 @@ const LBodytext = styled.p`
   font-size: 20px;
   line-height: 28px;
   margin: 0px;
+  @media (max-width: 1080px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
 `;
 
 const MBodytext = styled.p`
   font-size: 18px;
   line-height: 30px;
   margin: 0px;
+  @media (max-width: 1080px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
 `;
 
 const SBodytext = styled.p`
@@ -51,7 +59,8 @@ const SBodytext = styled.p`
   line-height: 34px;
   margin: 0px;
   @media (max-width: 1080px) {
-    font-size: 15px;
+    font-size: 12px;
+    line-height: 20px;
   }
 `;
 
