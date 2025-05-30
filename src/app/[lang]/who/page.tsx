@@ -1,6 +1,6 @@
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
-import HeroTheme from '@/components/HeroTheme';
+import SupportSection from '@/components/SupportSection';
 
 export default async function Who(props: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await props.params;
@@ -8,10 +8,7 @@ export default async function Who(props: { params: Promise<{ lang: Locale }> }) 
   const dictionary = await getDictionary(lang);
   return (
     <>
-      <HeroTheme
-        dictionary={dictionary.donationDetails}
-        image="/assets/images/volunteer/volunteerHero.png"
-      />
+      <SupportSection dictionary={dictionary.who} />
     </>
   );
 }

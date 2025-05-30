@@ -312,5 +312,16 @@
     "addressPlaceholder": "Your address...",
     "messageLabel": "Message",
     "messagePlaceholder": "write message.."
+  },
+  "who": {
+    "sectionTitle": "Who We Are",
+    "headingLine1": "Supporting Dreams",
+    "headingLine2": "Changing Lives",
+    "description1": "Lorem Ipsum is simply dummy a of the printing and type setting industry",
+    "description2": "Loreaim Ipsum has been the industry's standard dummy",
+    "totalFundLabel": "Total Fund Worth:",
+    "totalFundValue": "450,896,070$",
+    "totalCasesLabel": "Total Cases Helped:",
+    "totalCasesValue": "200+"
   }
 }

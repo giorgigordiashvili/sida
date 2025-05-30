@@ -51,7 +51,7 @@ const SBodytext = styled.p`
   line-height: 34px;
   margin: 0px;
   @media (max-width: 1080px) {
-    font-size: 15px;
+    font-size: 14px;
   }
 `;
 
@@ -84,7 +84,7 @@ const H4 = styled.h4`
 `;
 
 const CaptionText = styled.p`
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Work Sans';
   font-weight: 400;
   font-size: 16px;
   line-height: 34px;
@@ -94,6 +94,7 @@ const CaptionText = styled.p`
     line-height: 20px;
   }
 `;
+
 const Label = styled.p`
   font-family: 'Jost';
   font-weight: 700;
@@ -123,6 +124,7 @@ type TypographyProps = {
   children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  color?: string;
 };
 
 function Typography({ variant, children, className }: TypographyProps) {

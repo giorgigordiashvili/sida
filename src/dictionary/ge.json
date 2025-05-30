@@ -320,5 +320,16 @@
     "addressPlaceholder": "შენი მისამართი...",
     "messageLabel": "შეტყობინება",
     "messagePlaceholder": "დაწერე შეტყობინება..."
+  },
+  "who": {
+    "sectionTitle": "ვინ ვართ ჩვენ",
+    "headingLine1": "ვიხმართ ოცნებებს",
+    "headingLine2": "ვცვლით სიცოცხლეებს",
+    "description1": "ლორემ იპსუმი წარმოადგენს ბეჭდვისა და ტიპოგრაფიის ინდუსტრიის სატესტო ტექსტს",
+    "description2": "ლორემ იპსუმი ინდუსტრიის სტანდარტად იქცა",
+    "totalFundLabel": "სულ შეგროვებული თანხა:",
+    "totalFundValue": "450,896,070$",
+    "totalCasesLabel": "დახმარებული შემთხვევები:",
+    "totalCasesValue": "200+"
   }
 }
