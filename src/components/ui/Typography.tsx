@@ -27,7 +27,7 @@ const H2 = styled.h2`
 `;
 
 const XLBodytext = styled.p`
-  font-weight: 400;
+  font-weight: 700;
   font-size: 26px;
   line-height: 35.01px;
   margin: 0px;
