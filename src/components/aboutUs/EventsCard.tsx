@@ -44,11 +44,11 @@ const StyledImageWrapper = styled.div<{ blur?: boolean }>`
   }
 
   @media (max-width: 1080px) {
-    max-width: 160px;
-    max-height: 130px;
+    max-width: 212px;
+    max-height: 142px;
 
     img {
-      max-height: 130px;
+      max-height: 142px;
     }
   }
 `;
@@ -92,6 +92,10 @@ const StyledLocation = styled.div`
   gap: 10px;
   align-items: center;
   color: rgba(77, 77, 77, 1);
+
+  @media (max-width: 1080px) {
+    font-size: 12px;
+  }
 `;
 
 const StyledSchedule = styled.div`
@@ -110,6 +114,12 @@ const StyledSchedule = styled.div`
   padding-left: 15px;
   margin-top: -54px;
   margin-left: 20px;
+
+  @media (max-width: 1080px) {
+    max-width: 150px;
+    padding-left: 5px;
+    margin-left: 5px;
+  }
 `;
 
 export default function EventCard(props: Props) {
