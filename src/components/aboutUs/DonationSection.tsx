@@ -20,6 +20,7 @@ const StyledSection = styled.section`
 
   @media (max-width: 1080px) {
     margin-top: -165px;
+    padding: 0;
   }
 `;
 

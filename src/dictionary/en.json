@@ -383,5 +383,32 @@
       "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo",
       "buttonText": "JOIN NOW"
     }
+  },
+  "ourEvents": {
+    "title": "OUR EVENTS",
+    "text": "Join Us in the Fight Against Poverty",
+    "cards": {
+      "buttonText": "DONATE NOW",
+      "firstCard": {
+        "img": "/assets/images/pfp.svg",
+        "title": "Donation Drive",
+        "text": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim",
+        "address": "6391 Elgin St. Celina, 10299"
+      },
+      "secondCard": {
+        "img": "/assets/images/pfp.svg",
+        "title": "Donation Drive",
+        "text": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim",
+        "address": "6391 Elgin St. Celina, 10299",
+        "schedule": "20th Dec, 2024"
+      },
+      "thirdCard": {
+        "img": "/assets/images/pfp.svg",
+        "title": "Donation Drive",
+        "text": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim",
+        "address": "6391 Elgin St. Celina, 10299",
+        "schedule": "20th Dec, 2024"
+      }
+    }
   }
 }
