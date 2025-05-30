@@ -21,8 +21,8 @@ const H2 = styled.h2`
   line-height: 60px;
   margin: 0px;
   @media (max-width: 1080px) {
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 28px;
+    line-height: 40px;
   }
 `;
 
@@ -36,7 +36,7 @@ const XLBodytext = styled.p`
 const LBodytext = styled.p`
   font-weight: bold;
   font-size: 20px;
-  line-height: 28px;
+  line-height: 34px;
   margin: 0px;
 `;
 
@@ -44,6 +44,9 @@ const MBodytext = styled.p`
   font-size: 18px;
   line-height: 30px;
   margin: 0px;
+  @media (max-width: 1080px) {
+    font-size: 16px;
+  }
 `;
 
 const SBodytext = styled.p`
@@ -51,7 +54,11 @@ const SBodytext = styled.p`
   line-height: 34px;
   margin: 0px;
   @media (max-width: 1080px) {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
   }
 `;
 
@@ -83,6 +90,13 @@ const CaptionText = styled.p`
   }
 `;
 
+const XXSBodytext = styled.p`
+  @media (max-width: 1080px) {
+    font-size: 12px;
+    line-height: 20px;
+  }
+`;
+
 type TypographyProps = {
   variant:
     | 'h1'
@@ -93,6 +107,7 @@ type TypographyProps = {
     | 'mBodytext'
     | 'sBodytext'
     | 'xsBodytext'
+    | 'xxsBodytext'
     | 'caption';
   children: React.ReactNode;
   className?: string;
@@ -116,6 +131,8 @@ function Typography({ variant, children, className }: TypographyProps) {
       return <SBodytext className={className}>{children}</SBodytext>;
     case 'xsBodytext':
       return <XSBodytext className={className}>{children}</XSBodytext>;
+    case 'xxsBodytext':
+      return <XXSBodytext className={className}>{children}</XXSBodytext>;
     case 'caption':
       return <CaptionText className={className}>{children}</CaptionText>;
     default:
