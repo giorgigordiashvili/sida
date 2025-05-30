@@ -1,19 +1,17 @@
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
 import HeroTheme from '@/components/HeroTheme';
-import ContactForm from '@/components/Contact';
 
-export default async function Contact(props: { params: Promise<{ lang: Locale }> }) {
+export default async function Who(props: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await props.params;
 
   const dictionary = await getDictionary(lang);
   return (
     <>
       <HeroTheme
-        dictionary={dictionary.contact}
-        image={'/assets/images/volunteer/volunteerHero.png'}
+        dictionary={dictionary.donationDetails}
+        image="/assets/images/volunteer/volunteerHero.png"
       />
-      <ContactForm dictionary={dictionary.mail} />
     </>
   );
 }

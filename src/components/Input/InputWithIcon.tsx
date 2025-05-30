@@ -12,7 +12,7 @@ const Wrapper = styled.div<WrapperProps>`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: ${(props) => props.width || '500px '};
+  width: ${(props) => props.width || '500px'};
   max-width: 100%;
 `;
 
@@ -40,17 +40,29 @@ const Icon = styled.img`
 `;
 
 type Props = {
-  label: string;
+  label: React.ReactNode;
   placeholder: string;
   iconSrc?: string;
   width?: string;
   height?: string;
+  typographyVariant?: 'h4' | 'label';
+  typographyStyle?: React.CSSProperties;
 };
 
-const InputWithIcon: React.FC<Props> = ({ label, placeholder, iconSrc, width, height }) => {
+const InputWithIcon: React.FC<Props> = ({
+  label,
+  placeholder,
+  iconSrc,
+  width,
+  height,
+  typographyVariant = 'h4',
+  typographyStyle,
+}) => {
   return (
     <Wrapper width={width} height={height}>
-      <Typography variant="h4">{label}</Typography>
+      <Typography variant={typographyVariant} style={typographyStyle}>
+        {label}
+      </Typography>
       <InputWrapper>
         <Input placeholder={placeholder} $hasIcon={!!iconSrc} />
         {iconSrc && <Icon src={iconSrc} alt="icon" />}

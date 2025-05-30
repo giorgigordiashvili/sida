@@ -287,7 +287,19 @@
   },
   "donationDetails": {
     "name": "Donation Details",
-    "home": "Home"
+    "home": "Home",
+    "selectPaymentMethod": "Select Payment Method",
+    "personalInformation": "Personal Information",
+    "selectAmount": "Select Amount",
+    "nameLabel": "Your First Name",
+    "namePlaceholder": "First Name...",
+    "lastNameLabel": "Your Last Name",
+    "lastNamePlaceholder": "Last Name...",
+    "emailLabel": "Your E-mail Address",
+    "emailPlaceholder": "E-mail Address...",
+    "donation": "Enter Donation Amount",
+    "donationPlaceholder": "..........",
+    "totalAmount": "Total Amount:"
   },
   "mail": {
     "contactUs": "Contact Us",

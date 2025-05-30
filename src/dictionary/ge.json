@@ -295,7 +295,19 @@
   },
   "donationDetails": {
     "name": "დონაციის დეტალები",
-    "home": "მთავარი"
+    "home": "მთავარი",
+    "selectPaymentMethod": "აირჩიე გადახდის მეთოდი",
+    "personalInformation": "პირადი ინფორმაცია",
+    "selectAmount": "აირჩიე თანხა",
+    "nameLabel": "თქვენი სახელი",
+    "namePlaceholder": "სახელი...",
+    "lastNameLabel": "თქვენი გვარი",
+    "lastNamePlaceholder": "გვარი...",
+    "emailLabel": "თქვენი ელ.ფოსტის მისამართი",
+    "emailPlaceholder": "ელ.ფოსტა...",
+    "donation": "შეიყვანეთ თანხის რაოდენობა",
+    "donationPlaceholder": "..........",
+    "totalAmount": "ჯამი:"
   },
   "mail": {
     "contactUs": "დაგვიკავშირდი",
