@@ -331,7 +331,7 @@
       "comment": "Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere vive rra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentu m ul amcorper viverra laoreet.",
       "name": "Mark wood"
     },
-    "bio": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
+    "bioo": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
     "keywords": {
       "keyword": "Keyword:",
       "word1": "Relief Effort",
@@ -349,6 +349,38 @@
       "comment": "Ished fact that a reader will be distrol acted bioii the.ished fact that a reader will be distrol acted laoreet Aliquam fact that a reader will be distrol acted Aliquam eros justo. Ished fact that a reader will be distrol acted bioii the.i",
       "replies": "(1) Replies",
       "reply": "Reply"
-    }
+    },
+    "bio": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have"
+  },
+  "keywords": {
+    "keyword": "Keyword:",
+    "word1": "Relief Effort",
+    "word2": "Kindness",
+    "word3": "Helping"
+  },
+  "tags": {
+    "tag": "Tags:",
+    "tag1": "Donation",
+    "tag2": "Charity"
+  },
+  "contact": {
+    "name": "Contact",
+    "home": "Home"
+  },
+  "donationDetails": {
+    "name": "Donation Details",
+    "home": "Home"
+  },
+  "mail": {
+    "contactUs": "Contact Us",
+    "title": "Empowering Communities through Donations",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "Your email...",
+    "phoneLabel": "Your Phone",
+    "phonePlaceholder": "Your phone...",
+    "addressLabel": "Your Address",
+    "addressPlaceholder": "Your address...",
+    "messageLabel": "Message",
+    "messagePlaceholder": "write message.."
   }
 }

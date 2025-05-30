@@ -82,7 +82,6 @@ const StyledBio = styled.div`
   }
 `;
 
-// Mock blog data - replace with your actual data
 const mockBlogs = [
   { id: 1, title: 'Blog Title 1', description: 'Blog description 1' },
   { id: 2, title: 'Blog Title 2', description: 'Blog description 2' },
