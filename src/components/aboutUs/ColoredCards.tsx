@@ -42,7 +42,9 @@ interface SecondCardWrapperProps {
   isExpanded: boolean;
 }
 
-const SecondCardWrapper = styled.div<SecondCardWrapperProps>`
+const SecondCardWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'isExpanded',
+})<SecondCardWrapperProps>`
   @media (max-width: 768px) {
     position: absolute;
     top: 30%;

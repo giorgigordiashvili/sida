@@ -8,7 +8,9 @@ type Props = {
   isActive?: boolean;
 };
 
-const StyledButton = styled.button<{ isActive?: boolean }>`
+const StyledButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== 'isActive',
+})<{ isActive?: boolean }>`
   background-color: transparent;
   border: 5px solid rgba(43, 182, 115, 1);
   width: 180px;

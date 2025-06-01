@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import { getDictionary } from '@/get-dictionary';
 import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
@@ -8,6 +8,7 @@ import Help from '../Help';
 import CustomButton from '../CustomButton';
 import SecondDonateBtn from '../SecDonateBtn';
 import Card from './Card';
+import { useCarousel } from '../reusableCarousel/UseCarousel';
 
 type TabKey = 'first' | 'second' | 'third';
 
@@ -148,39 +149,25 @@ export default function AboutUs({
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['pageAboutUs'];
 }) {
-  const [activeTab, setActiveTab] = useState<TabKey>('first');
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const tabs: TabKey[] = ['first', 'second', 'third'];
 
+  // Use the reusable carousel hook
+  const carousel = useCarousel({
+    totalItems: tabs.length,
+    autoPlay: false,
+    enableTouch: true,
+    touchThreshold: 50,
+  });
+
   const getPosition = (index: number) => {
-    const activeIdx = tabs.indexOf(activeTab);
+    const activeIdx = carousel.activeIndex;
     let diff = index - activeIdx;
     if (diff > tabs.length / 2) diff -= tabs.length;
     if (diff < -tabs.length / 2) diff += tabs.length;
     return diff;
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (window.innerWidth > 1080) return;
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (touchStartX === null || window.innerWidth > 1080) return;
-    const currentX = e.touches[0].clientX;
-    const diff = touchStartX - currentX;
-    if (Math.abs(diff) > 50) {
-      const currentIdx = tabs.indexOf(activeTab);
-      let newIdx = diff > 0 ? currentIdx + 1 : currentIdx - 1;
-      newIdx = (newIdx + tabs.length) % tabs.length;
-      setActiveTab(tabs[newIdx]);
-      setTouchStartX(null);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setTouchStartX(null);
-  };
+  const activeTab = tabs[carousel.activeIndex];
 
   return (
     <StyledSection>
@@ -205,20 +192,16 @@ export default function AboutUs({
           <Typography variant="sBodytext">{dictionary.aboutUs}</Typography>
           <Typography variant="h2">{dictionary.title}</Typography>
 
-          <StyledButtons
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
+          <StyledButtons {...carousel.touchHandlers}>
             {tabs.map((tab, i) => {
-              const isActive = activeTab === tab;
+              const isActive = i === carousel.activeIndex;
               const pos = getPosition(i);
               return (
                 <ButtonWrapper
                   key={tab}
                   $isActive={isActive}
                   $position={pos}
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => carousel.navigation.goToSlide(i)}
                 >
                   <CustomButton text={dictionary.textButtons[tab].button} isActive={isActive} />
                 </ButtonWrapper>

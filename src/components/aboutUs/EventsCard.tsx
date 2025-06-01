@@ -27,7 +27,10 @@ const StyledContainer = styled.div`
     box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15);
   }
 `;
-const StyledImageWrapper = styled.div<{ blur?: boolean }>`
+
+const StyledImageWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'blur',
+})<{ blur?: boolean }>`
   border-radius: 20px;
   max-width: 370px;
   width: 100%;
@@ -52,6 +55,7 @@ const StyledImageWrapper = styled.div<{ blur?: boolean }>`
     }
   }
 `;
+
 const StyledContentWrapper = styled.div`
   max-width: 370px;
   display: flex;
