@@ -1,10 +1,8 @@
 'use client';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
 import FundCard from './FundCard';
 import { getDictionary } from '@/get-dictionary';
-
-type CardPosition = 'active' | 'left' | 'right' | 'far-left' | 'far-right';
+import { useCarousel, CardPosition } from './reusableCarousel/UseCarousel';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -60,17 +58,6 @@ export default function FundCards({
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['fundCards'];
 }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isClient, setIsClient] = useState(false);
-  const [isTouching, setIsTouching] = useState(false);
-  const [startX, setStartX] = useState(0);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
-
   const cards = [
     {
       title: dictionary.title,
@@ -92,70 +79,40 @@ export default function FundCards({
     },
   ];
 
-  const getNormalizedIndex = (index: number) => {
-    const total = cards.length;
-    return ((index % total) + total) % total;
-  };
+  // Use your carousel hook
+  const carousel = useCarousel({
+    totalItems: cards.length,
+    autoPlay: false, // Set to true if you want auto-play
+    autoPlayInterval: 3000,
+    enableTouch: true,
+    touchThreshold: 50,
+  });
 
-  const getCardPosition = (index: number): CardPosition => {
-    const total = cards.length;
-    const normalizedActive = getNormalizedIndex(activeIndex);
-    const normalizedIndex = getNormalizedIndex(index);
-    let diff = normalizedIndex - normalizedActive;
-    if (diff > total / 2) diff -= total;
-    if (diff < -total / 2) diff += total;
-
-    if (diff === 0) return 'active';
-    if (diff === 1 || diff === -total + 1) return 'right';
-    if (diff === -1 || diff === total - 1) return 'left';
-    return diff > 1 ? 'far-right' : 'far-left';
-  };
-
-  const handleCardClick = (index: number) => {
-    setActiveIndex(index);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (window.innerWidth > 1080) return;
-    setIsTouching(true);
-    setStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isTouching || window.innerWidth > 1080) return;
-    const distance = startX - e.touches[0].clientX;
-
-    if (Math.abs(distance) > 50) {
-      setActiveIndex((prev) =>
-        distance > 0 ? getNormalizedIndex(prev + 1) : getNormalizedIndex(prev - 1)
-      );
-      setIsTouching(false);
-    }
-  };
-
-  const handleTouchEnd = () => setIsTouching(false);
+  // Only render on client side
+  if (!carousel.isClient) return null;
 
   return (
-    <StyledContainer
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      {cards.map((card, index) => (
-        <CardWrapper
-          key={index}
-          $isActive={getCardPosition(index) === 'active'}
-          $position={getCardPosition(index)}
-          onClick={() => handleCardClick(index)}
-        >
-          <FundCard
-            title={card.title}
-            description={card.description}
-            imgSrc={card.imgSrc}
-            backgroundColor={card.backgroundColor}
-          />
-        </CardWrapper>
-      ))}
+    <StyledContainer {...carousel.touchHandlers}>
+      {cards.map((card, index) => {
+        const position = carousel.helpers.getCardPosition(index);
+        const isActive = position === 'active';
+
+        return (
+          <CardWrapper
+            key={index}
+            $isActive={isActive}
+            $position={position}
+            onClick={() => carousel.navigation.goToSlide(index)}
+          >
+            <FundCard
+              title={card.title}
+              description={card.description}
+              imgSrc={card.imgSrc}
+              backgroundColor={card.backgroundColor}
+            />
+          </CardWrapper>
+        );
+      })}
     </StyledContainer>
   );
 }
