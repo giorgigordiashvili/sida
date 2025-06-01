@@ -23,7 +23,7 @@ const StyledContainer = styled.div`
   position: relative;
 
   @media (max-width: 1080px) {
-    padding: 10px 10px 20px 10px;
+    padding: 20px;
     box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15);
   }
 `;
@@ -47,7 +47,7 @@ const StyledImageWrapper = styled.div.withConfig({
   }
 
   @media (max-width: 1080px) {
-    max-width: 212px;
+    width: 212px;
     max-height: 142px;
 
     img {
@@ -68,7 +68,7 @@ const StyledContentWrapper = styled.div`
   }
 
   @media (max-width: 1080px) {
-    max-width: 160px;
+    max-width: 212px;
     padding: 10px 0 0 0;
     gap: 10px;
 
@@ -87,7 +87,7 @@ const StyledButton = styled.div`
 
   @media (max-width: 1080px) {
     padding-top: 0px;
-    width: 100%;
+    width: 160px;
   }
 `;
 
@@ -120,9 +120,16 @@ const StyledSchedule = styled.div`
   margin-left: 20px;
 
   @media (max-width: 1080px) {
-    max-width: 150px;
-    padding-left: 5px;
-    margin-left: 5px;
+    max-width: 172px;
+    padding-left: 16px;
+    margin-left: 20px;
+    margin-top: -44px;
+    gap: 8px;
+    height: 24px;
+    border-radius: 5px;
+    p {
+      text-transform: capitalize;
+    }
   }
 `;
 

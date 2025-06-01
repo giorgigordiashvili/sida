@@ -13,6 +13,10 @@ const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 1080px) {
+    padding: 30px 0px 0px 0px;
+  }
 `;
 
 const StyledTitles = styled.div`
@@ -22,16 +26,24 @@ const StyledTitles = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 60px;
 
   & > :nth-child(1) {
     color: rgba(226, 109, 90, 1);
+  }
+
+  & > :nth-child(2) {
+    text-align: center;
   }
 `;
 
 const CardsContainer = styled.div`
   max-width: 1290px;
   width: 100%;
+  margin-top: 60px;
+
+  @media (max-width: 1080px) {
+    margin-top: 15px;
+  }
 `;
 
 interface EventCardData {
@@ -47,7 +59,6 @@ interface EventsSectionProps {
 }
 
 export default function OurEvents({ dictionary }: EventsSectionProps) {
-  // Transform dictionary data into consistent format
   const eventCards: EventCardData[] = useMemo(
     () => [
       {
@@ -101,6 +112,7 @@ export default function OurEvents({ dictionary }: EventsSectionProps) {
           mobileHeight="400px"
           showDots={true}
           dotColor="rgba(43, 182, 115, 1)"
+          cardSize="large"
           aria-label="Upcoming events carousel"
         />
       </CardsContainer>

@@ -7,6 +7,8 @@ interface CardWrapperProps {
   $isActive: boolean;
   $position: CardPosition;
   $totalCards: number;
+  $cardSize: 'small' | 'medium' | 'large';
+  $customSpacing?: { left: number; right: number; farLeft: number; farRight: number };
 }
 
 const DesktopContainer = styled.div<{ $breakpoint: string }>`
@@ -60,41 +62,70 @@ const CardWrapper = styled.div<CardWrapperProps>`
   cursor: pointer;
   top: 50%;
   transform-origin: center center;
-  transform: ${({ $isActive, $position }) => {
+  transform: ${({ $isActive, $position, $cardSize, $customSpacing }) => {
     const baseTransform = 'translateY(-50%) ';
+
+    // Dynamic spacing based on card size or custom spacing
+    const spacing =
+      $customSpacing ||
+      {
+        small: { left: 150, right: 150, farLeft: 300, farRight: 300 },
+        medium: { left: 200, right: 200, farLeft: 400, farRight: 400 },
+        large: { left: 250, right: 250, farLeft: 500, farRight: 500 },
+      }[$cardSize];
+
     if ($isActive) {
       return baseTransform + 'translateX(0) scale(1) translateZ(0)';
     } else if ($position === 'left') {
-      return baseTransform + 'translateX(-200px) scale(0.85) translateZ(-100px) rotateY(15deg)';
+      return (
+        baseTransform +
+        `translateX(-${spacing.left}px) scale(0.85) translateZ(-100px) rotateY(15deg)`
+      );
     } else if ($position === 'right') {
-      return baseTransform + 'translateX(200px) scale(0.85) translateZ(-100px) rotateY(-15deg)';
+      return (
+        baseTransform +
+        `translateX(${spacing.right}px) scale(0.85) translateZ(-100px) rotateY(-15deg)`
+      );
     }
     return $position === 'far-left'
-      ? baseTransform + 'translateX(-400px) scale(0.7) translateZ(-200px) rotateY(25deg)'
-      : baseTransform + 'translateX(400px) scale(0.7) translateZ(-200px) rotateY(-25deg)';
+      ? baseTransform +
+          `translateX(-${spacing.farLeft}px) scale(0.7) translateZ(-200px) rotateY(25deg)`
+      : baseTransform +
+          `translateX(${spacing.farRight}px) scale(0.7) translateZ(-200px) rotateY(-25deg)`;
   }};
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   filter: ${({ $isActive }) => ($isActive ? 'none' : 'blur(1px)')};
 
   &:hover {
-    transform: ${({ $isActive, $position }) => {
+    transform: ${({ $isActive, $position, $cardSize, $customSpacing }) => {
       if ($isActive) return 'translateY(-50%) translateX(0) scale(1.02) translateZ(0)';
+
       const baseTransform = 'translateY(-50%) ';
+      const spacing =
+        $customSpacing ||
+        {
+          small: { left: 150, right: 150, farLeft: 300, farRight: 300 },
+          medium: { left: 200, right: 200, farLeft: 400, farRight: 400 },
+          large: { left: 250, right: 250, farLeft: 500, farRight: 500 },
+        }[$cardSize];
+
       if ($position === 'left') {
-        return baseTransform + 'translateX(-200px) scale(0.88) translateZ(-100px) rotateY(15deg)';
+        return (
+          baseTransform +
+          `translateX(-${spacing.left}px) scale(0.88) translateZ(-100px) rotateY(15deg)`
+        );
       } else if ($position === 'right') {
-        return baseTransform + 'translateX(200px) scale(0.88) translateZ(-100px) rotateY(-15deg)';
+        return (
+          baseTransform +
+          `translateX(${spacing.right}px) scale(0.88) translateZ(-100px) rotateY(-15deg)`
+        );
       }
       return $position === 'far-left'
-        ? baseTransform + 'translateX(-400px) scale(0.73) translateZ(-200px) rotateY(25deg)'
-        : baseTransform + 'translateX(400px) scale(0.73) translateZ(-200px) rotateY(-25deg)';
+        ? baseTransform +
+            `translateX(-${spacing.farLeft}px) scale(0.73) translateZ(-200px) rotateY(25deg)`
+        : baseTransform +
+            `translateX(${spacing.farRight}px) scale(0.73) translateZ(-200px) rotateY(-25deg)`;
     }};
-  }
-
-  // Accessibility
-  &:focus {
-    outline: 2px solid rgba(43, 182, 115, 1);
-    outline-offset: 4px;
   }
 `;
 
@@ -143,6 +174,8 @@ export interface ResponsiveCarouselProps<T> {
   enableTouch?: boolean;
   className?: string;
   'aria-label'?: string;
+  cardSize?: 'small' | 'medium' | 'large'; // New prop
+  customSpacing?: { left: number; right: number; farLeft: number; farRight: number }; // Alternative custom spacing
 }
 
 export function ResponsiveCarousel<T>({
@@ -157,6 +190,8 @@ export function ResponsiveCarousel<T>({
   enableTouch = true,
   className,
   'aria-label': ariaLabel = 'Image carousel',
+  cardSize = 'medium', // Default to medium
+  customSpacing, // Custom spacing override
 }: ResponsiveCarouselProps<T>) {
   const carousel = useCarousel({
     totalItems: items.length,
@@ -200,6 +235,8 @@ export function ResponsiveCarousel<T>({
                     $isActive={isActive}
                     $position={position}
                     $totalCards={items.length}
+                    $cardSize={cardSize}
+                    $customSpacing={customSpacing}
                     onClick={() => carousel.navigation.goToSlide(index)}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {

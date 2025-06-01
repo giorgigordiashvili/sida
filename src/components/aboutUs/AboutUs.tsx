@@ -39,8 +39,6 @@ const Container = styled.div`
   @media (max-width: 1080px) {
     flex-direction: column;
     align-items: center;
-    padding: 0;
-    margin-top: 30px;
   }
 `;
 
@@ -67,7 +65,7 @@ const StyledRight = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
 
     & > p:first-of-type {
       display: none;
@@ -123,6 +121,7 @@ const StyledTabContent = styled.div`
     max-width: 308px;
     width: 100%;
     text-align: center;
+    margin: 0;
   }
 `;
 

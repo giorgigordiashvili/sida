@@ -11,7 +11,7 @@ const StyledSection = styled.section`
   padding: 0 16px;
 
   @media (max-width: 1080px) {
-    margin-top: -165px;
+    margin-top: -206px;
     padding: 0;
   }
 `;
@@ -61,6 +61,7 @@ export default function DonateSection({ dictionary }: DonationSectionProps) {
           mobileHeight="400px"
           showDots={true}
           dotColor="rgba(43, 182, 115, 1)"
+          cardSize="medium"
           aria-label="Donation campaigns carousel"
         />
       </CardsContainer>

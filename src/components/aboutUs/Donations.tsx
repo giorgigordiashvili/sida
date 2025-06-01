@@ -12,6 +12,7 @@ const StyledSection = styled.section`
 
   @media (max-width: 1080px) {
     height: 360px;
+    margin-top: 30px;
   }
 `;
 
