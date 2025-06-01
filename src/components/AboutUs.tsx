@@ -8,7 +8,7 @@ import Help from './Help';
 import { useState } from 'react';
 
 const Container = styled.div`
-  padding: 73px 0 189px 0;
+  padding: 120px 16px 0 16px;
   color: rgba(52, 52, 52, 1);
   max-width: 1290px;
   margin: auto;
@@ -18,6 +18,7 @@ const Container = styled.div`
 
   @media (max-width: 1080px) {
     justify-content: center;
+    padding: 60px 16px 0 16px;
   }
 `;
 
@@ -26,7 +27,7 @@ const StyledBioContainer = styled.div`
   flex-direction: column;
   width: 571px;
   gap: 30px;
-
+  justify-content: center;
   @media (max-width: 1080px) {
     display: flex;
     justify-content: center;
@@ -36,7 +37,6 @@ const StyledBioContainer = styled.div`
 `;
 
 const MainContainer = styled.div`
-  background-color: rgba(249, 249, 247, 1);
   @media (max-width: 1080px) {
   }
 `;
@@ -44,7 +44,7 @@ const MainContainer = styled.div`
 const StyledImageBox = styled.div`
   position: relative;
   width: 571px;
-  height: 571px;
+  height: 634px;
   background: transparent;
 
   @media (max-width: 1080px) {
@@ -75,7 +75,9 @@ const MobileListItem = styled.li`
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
-    color: rgba(77, 77, 77, 1);
+    color: black;
+    margin-top: 30px;
+    font-weight: 700;
   }
 `;
 
@@ -99,6 +101,10 @@ const StyledTitle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  :nth-child(1) {
+    color: rgba(226, 109, 90, 1);
+  }
 
   @media (max-width: 1080px) {
     :nth-child(1) {
@@ -136,7 +142,7 @@ const StyledSwitcher = styled.div`
     border-radius: 20px;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0;
     background-color: rgba(249, 249, 247, 1);
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
   }
@@ -144,22 +150,33 @@ const StyledSwitcher = styled.div`
 
 interface SwitcherItemProps {
   selected: boolean;
+  index: number;
+  selectedIndex: number;
 }
 
 const SwitcherItem = styled.div<SwitcherItemProps>`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
   background-color: ${(props) => (props.selected ? 'rgba(31, 31, 31, 1)' : 'transparent')};
+  border-radius: 20px;
+  padding: ${(props) => {
+    if (!props.selected) return '7.5px 20px';
 
-  img {
-    filter: ${(props) => (props.selected ? 'brightness(0) invert(1)' : 'none')};
-  }
+    if (props.index === 0 && props.selectedIndex === 0) {
+      return '7.5px 41px 7.5px 20px';
+    }
+    if (props.index === 1 && props.selectedIndex === 1) {
+      return '7.5px 20px';
+    }
+    if (props.index === 2 && props.selectedIndex === 2) {
+      return '7.5px 20px 7.5px 41px';
+    }
+
+    return '7.5px 20px';
+  }};
 `;
 
 const StyledHelp = styled.div`
@@ -206,6 +223,8 @@ export default function AboutUs({
                 <SwitcherItem
                   key={index}
                   selected={selectedItem === index}
+                  index={index}
+                  selectedIndex={selectedItem}
                   onClick={() => handleItemClick(index)}
                 >
                   <Image
