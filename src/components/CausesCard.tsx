@@ -135,25 +135,6 @@ const ProgressBar = styled.div<{ width: string }>`
   width: ${(props) => props.width};
   background-color: ${(props) => props.color || 'rgba(43, 182, 115, 1)'};
   border-radius: 3px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: #fff;
-    border-radius: 50%;
-    right: 0;
-    border: 3px solid ${(props) => props.color || 'rgba(43, 182, 115, 1)'};
-    top: -5px;
-
-    @media (max-width: 1080px) {
-      width: 12px;
-      height: 12px;
-      top: -4px;
-      border: 2.61px solid ${(props) => props.color || 'rgba(43, 182, 115, 1)'};
-    }
-  }
 `;
 
 const getLineColor = (color: 'purple' | 'green' | 'orange') => {
