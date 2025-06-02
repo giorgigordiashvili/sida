@@ -23,12 +23,14 @@ const StyledCard = styled.div<{ color: string }>`
     }
     return 'rgba(226, 109, 90, 1)';
   }};
-  box-shadow: ${(props) => {
-    if (props.color === 'green') {
-      return '0px -10px 16px 0px rgba(0, 0, 0, 0.3)';
-    }
-    return '0';
-  }};
+  @media (max-width: 768px) {
+    box-shadow: ${(props) => {
+      if (props.color === 'green') {
+        return '0px -10px 16px 0px rgba(0, 0, 0, 0.3)';
+      }
+      return '0';
+    }};
+  }
 
   & > :nth-child(1) {
     font-size: 24px;
