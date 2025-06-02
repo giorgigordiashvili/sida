@@ -265,11 +265,36 @@
     "name": "Projects",
     "home": "Home"
   },
-  "donation": {
-    "name": "Donation",
-    "home": "Home"
+  "searchBar": {
+    "title": "Search Here",
+    "placeholder": "Search...",
+    "filter": {
+      "category": "Category",
+      "donation": "Donation Drive",
+      "volunteer": "Volunteer Assistance",
+      "fundraiser": "Fundraising Event",
+      "support": "Support Network",
+      "initiative": "Philanthropic Initiative"
+    },
+    "posts": {
+      "title": "Popular Posts",
+      "post1.date": "October 19, 2022",
+      "post1": "Funding Research for a Cure Charity",
+      "post2.date": "October 20, 2022",
+      "post2": "Supporting Mental Health Initiatives Donations",
+      "post3.date": "October 21, 2022",
+      "post3": "Caring for the Elderly and Vulnerable at a Time"
+    },
+    "tags": {
+      "title": "Popular Tags",
+      "tag1": "Giving Back",
+      "tag2": "Relief Effort",
+      "tag3": "Positive Impact",
+      "tag4": "Kindness",
+      "tag5": "Care",
+      "tag6": "Helping"
+    }
   },
-
   "distributor": {
     "title": "Top Distributors Around World",
     "countries": {
@@ -280,6 +305,74 @@
       "Turkey": "Turkey",
       "Indonesia": "Indonesia"
     }
+  },
+  "donation": {
+    "name": "Donation",
+    "home": "Home"
+  },
+  "blog": {
+    "title": "Together We Can Make a Difference",
+    "description": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
+    "tags": {
+      "admin": "By Admin",
+      "category": "Category",
+      "comments": "Comments"
+    }
+  },
+  "blogDetails": {
+    "title": "Explore the world like never before travel experience ",
+    "description": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
+    "tags": {
+      "admin": "By Admin",
+      "category": "Category",
+      "comments": "Comments"
+    },
+    "comment": {
+      "comment": "Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere vive rra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentu m ul amcorper viverra laoreet.",
+      "name": "Mark wood"
+    },
+    "bioo": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
+    "keywords": {
+      "keyword": "Keyword:",
+      "word1": "Relief Effort",
+      "word2": "Kindness",
+      "word3": "Helping"
+    },
+    "keywordTags": {
+      "tag": "Tags:",
+      "tag1": "Donation",
+      "tag2": "Charity"
+    },
+    "commentDetails": {
+      "author": "Stanio lainto",
+      "date": "September 16, 2024",
+      "comment": "Ished fact that a reader will be distrol acted bioii the.ished fact that a reader will be distrol acted laoreet Aliquam fact that a reader will be distrol acted Aliquam eros justo. Ished fact that a reader will be distrol acted bioii the.i",
+      "replies": "(1) Replies",
+      "reply": "Reply"
+    },
+    "bio": "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have",
+    "commentCreate": {
+      "title": "Add a comment",
+      "bio": "By using the form, you agree to the storage of your message. You can contact us directly now.",
+      "placeholders": {
+        "name": "Your Name",
+        "email": "Your Email",
+        "website": "Your Website",
+        "comment": "Write your message"
+      },
+      "checkbox": "Save my name, email and website"
+    }
+  },
+  "keywords": {
+    "keyword": "Keyword:",
+    "word1": "Relief Effort",
+    "word2": "Kindness",
+    "word3": "Helping"
+  },
+  "tags": {
+    "tag": "Tags:",
+    "tag1": "Donation",
+    "tag2": "Charity"
   },
   "contact": {
     "name": "Contact",

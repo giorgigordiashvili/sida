@@ -63,7 +63,7 @@ export default function DonateButton({ text1, text2 }: Props) {
           width={14}
           height={16}
           alt="arrow"
-          objectFit="cover"
+          style={{ objectFit: 'cover' }}
         />
       </StyledArrow>
       <div>
