@@ -265,6 +265,38 @@
     "name": "Projects",
     "home": "Home"
   },
+  "pageAboutUs": {
+    "aboutUs": "ABOUT US",
+    "title": "Unite for a Cause Change the World",
+    "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.",
+    "donateButton": "DONATE NOW",
+    "textButtons": {
+      "first": {
+        "button": "Our Mission",
+        "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas."
+      },
+      "second": {
+        "button": "Our Vision",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      },
+      "third": {
+        "button": "Our Goal",
+        "text": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate."
+      }
+    },
+    "help": "Need Help?",
+    "number": "(319) 555-0115",
+
+    "donateNow": {
+      "text1": "Donate",
+      "text2": "Now"
+    },
+    "card": {
+      "number": "250+",
+      "text": "Services we provide",
+      "img": "/assets/images/aboutUs/cardImage.png"
+    }
+  },
   "searchBar": {
     "title": "Search Here",
     "placeholder": "Search...",
@@ -393,5 +425,83 @@
     "addressPlaceholder": "Your address...",
     "messageLabel": "Message",
     "messagePlaceholder": "write message.."
+  },
+  "donations": {
+    "title": "Charity Fund",
+    "text": "Together We Can Make a Difference"
+  },
+  "donationSection": {
+    "donateButton": "DONATE NOW",
+    "cards": [
+      {
+        "img": "/assets/images/pfp.svg",
+        "title": "Help For Ecosystem",
+        "text": "Charity and donation is a category that involves giving financial support.",
+        "raisedText": "Raised",
+        "raisedNumber": 40802,
+        "goalText": "Goal",
+        "goalNumber": 100000
+      },
+      {
+        "img": "/assets/images/pfp.svg",
+        "title": "Water For All",
+        "text": "Charity and donation is a category that ensures access to clean water globally.",
+        "raisedText": "Raised",
+        "raisedNumber": 20802,
+        "goalText": "Goal",
+        "goalNumber": 100000
+      },
+      {
+        "img": "/assets/images/pfp.svg",
+        "title": "Vaccine Aid Camp",
+        "text": "Charity and donation is a category that supports healthcare and vaccines.",
+        "raisedText": "Raised",
+        "raisedNumber": 90802,
+        "goalText": "Goal",
+        "goalNumber": 100000
+      }
+    ]
+  },
+
+  "coloredCard": {
+    "firstCard": {
+      "color": "orange",
+      "title": "Help Them With Donation",
+      "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo",
+      "buttonText": "DONATE NOW"
+    },
+    "secondCard": {
+      "color": "green",
+      "title": "Join With Us To Serve As Volenteer",
+      "text": "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernaturaut odit aut fugit, sed quia consequuntur. Dicta sunt explicabo. Nemo",
+      "buttonText": "JOIN NOW"
+    }
+  },
+  "ourEvents": {
+    "title": "OUR EVENTS",
+    "text": "Join Us in the Fight Against Poverty",
+    "cards": {
+      "buttonText": "DONATE NOW",
+      "firstCard": {
+        "img": "/assets/images/pfp.svg",
+        "title": "Donation Drive",
+        "text": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim",
+        "address": "6391 Elgin St. Celina, 10299"
+      },
+      "secondCard": {
+        "img": "/assets/images/pfp.svg",
+        "title": "Donation Drive",
+        "text": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim",
+        "address": "6391 Elgin St. Celina, 10299",
+        "schedule": "20th Dec, 2024"
+      },
+      "thirdCard": {
+        "img": "/assets/images/pfp.svg",
+        "title": "Donation Drive",
+        "text": "Lorem Ipsum is simply dummy a of the printing and type setting industry Loreaim",
+        "address": "6391 Elgin St. Celina, 10299",
+        "schedule": "20th Dec, 2024"
+      }
+    }
   }
 }

@@ -1,12 +1,10 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import NewsCard from './NewsCard';
 import { getDictionary } from '@/get-dictionary';
 import Typography from './ui/Typography';
 import styled from 'styled-components';
-
-// ---- TypeScript Fix: Define prop types ----
-type CardPosition = 'active' | 'left' | 'right' | 'far-left' | 'far-right';
+import { useCarousel, CardPosition } from './reusableCarousel/UseCarousel';
 
 interface CardWrapperProps {
   $isActive: boolean;
@@ -14,7 +12,6 @@ interface CardWrapperProps {
   $totalCards: number;
 }
 
-// ---- Styled Components ----
 const StyledSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -136,21 +133,12 @@ const CardWrapper = styled.div<CardWrapperProps>`
   }
 `;
 
-// ---- Main Component ----
 export default function NewsArticles({
   dictionary,
 }: {
   dictionary: Awaited<ReturnType<typeof getDictionary>>['newsCard'];
 }) {
   const containerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isClient, setIsClient] = useState(false);
-  const [isTouching, setIsTouching] = useState(false);
-  const [startX, setStartX] = useState(0);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const newsItems = dictionary.cards.map((card, index) => ({
     id: index + 1,
@@ -161,66 +149,13 @@ export default function NewsArticles({
     comment: dictionary.comments,
   }));
 
-  const getNormalizedIndex = (index: number) => {
-    const totalItems = newsItems.length;
-    return ((index % totalItems) + totalItems) % totalItems;
-  };
-
-  const getCardPosition = (index: number): CardPosition => {
-    const totalItems = newsItems.length;
-    const normalizedActiveIndex = getNormalizedIndex(activeIndex);
-    const normalizedIndex = getNormalizedIndex(index);
-
-    let diff = normalizedIndex - normalizedActiveIndex;
-    if (diff > totalItems / 2) diff -= totalItems;
-    if (diff < -totalItems / 2) diff += totalItems;
-
-    if (diff === 0) return 'active';
-    if (diff === 1 || diff === -totalItems + 1) return 'right';
-    if (diff === -1 || diff === totalItems - 1) return 'left';
-    if (diff > 1) return 'far-right';
-    return 'far-left';
-  };
-
-  const handleCardClick = (index: number) => {
-    setActiveIndex(index);
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (window.innerWidth > 1080) return;
-    setIsTouching(true);
-    setStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isTouching || window.innerWidth > 1080) return;
-    const x = e.touches[0].clientX;
-    const distance = startX - x;
-
-    if (Math.abs(distance) > 50) {
-      if (distance > 0) {
-        setActiveIndex((prev) => getNormalizedIndex(prev + 1));
-      } else {
-        setActiveIndex((prev) => getNormalizedIndex(prev - 1));
-      }
-      setIsTouching(false);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setIsTouching(false);
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (containerRef.current && window.innerWidth <= 1080) {
-        setActiveIndex((prev) => prev);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const carousel = useCarousel({
+    totalItems: newsItems.length,
+    autoPlay: false,
+    autoPlayInterval: 3000,
+    enableTouch: true,
+    touchThreshold: 50,
+  });
 
   return (
     <StyledSection>
@@ -229,13 +164,8 @@ export default function NewsArticles({
         <Typography variant="h2">{dictionary.recent || 'Recent Articles'}</Typography>
       </StyledTitle>
 
-      <StyledContainer
-        ref={containerRef}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        {isClient && window.innerWidth > 1080 ? (
+      <StyledContainer ref={containerRef} {...carousel.touchHandlers}>
+        {carousel.isClient && window.innerWidth > 1080 ? (
           newsItems.map((item) => (
             <CardWrapper
               key={item.id}
@@ -255,7 +185,7 @@ export default function NewsArticles({
         ) : (
           <SliderTrack>
             {newsItems.map((item, index) => {
-              const position = getCardPosition(index);
+              const position = carousel.helpers.getCardPosition(index);
               const isActive = position === 'active';
 
               return (
@@ -264,7 +194,7 @@ export default function NewsArticles({
                   $isActive={isActive}
                   $position={position}
                   $totalCards={newsItems.length}
-                  onClick={() => handleCardClick(index)}
+                  onClick={() => carousel.navigation.goToSlide(index)}
                 >
                   <NewsCard
                     title={item.title}

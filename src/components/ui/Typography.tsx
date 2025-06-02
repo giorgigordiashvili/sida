@@ -38,6 +38,10 @@ const LBodytext = styled.p`
   font-size: 20px;
   line-height: 34px;
   margin: 0px;
+  @media (max-width: 1080px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
 `;
 
 const MBodytext = styled.p`

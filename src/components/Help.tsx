@@ -1,8 +1,12 @@
 'use client';
-import { getDictionary } from '@/get-dictionary';
 import styled from 'styled-components';
 import Image from 'next/image';
 import Typography from './ui/Typography';
+
+type Props = {
+  helpText: string;
+  phoneNumber: string;
+};
 
 const DonateContact = styled.div`
   display: flex;
@@ -15,17 +19,13 @@ const StyledContact = styled.div`
   flex-direction: column;
 `;
 
-export default function Help({
-  dictionary,
-}: {
-  dictionary: Awaited<ReturnType<typeof getDictionary>>['aboutUs'];
-}) {
+export default function Help({ helpText, phoneNumber }: Props) {
   return (
     <DonateContact>
       <Image src="/assets/images/hero/phone.svg" alt="Phone" width={46} height={46} />
       <StyledContact>
-        <Typography variant="sBodytext">{dictionary.help}</Typography>
-        <Typography variant="mBodytext">{dictionary.number}</Typography>
+        <Typography variant="sBodytext">{helpText}</Typography>
+        <Typography variant="mBodytext">{phoneNumber}</Typography>
       </StyledContact>
     </DonateContact>
   );
