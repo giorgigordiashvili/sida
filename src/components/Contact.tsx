@@ -55,6 +55,7 @@ const FullWidthItem = styled.div`
 `;
 
 const SubTitle = styled.p`
+  font-family: 'Work Sans';
   font-weight: 400;
   font-size: 16px;
   line-height: 34px;

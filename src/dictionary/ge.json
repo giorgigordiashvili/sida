@@ -389,7 +389,19 @@
   },
   "donationDetails": {
     "name": "დონაციის დეტალები",
-    "home": "მთავარი"
+    "home": "მთავარი",
+    "selectPaymentMethod": "აირჩიე გადახდის მეთოდი",
+    "personalInformation": "პირადი ინფორმაცია",
+    "selectAmount": "აირჩიე თანხა",
+    "nameLabel": "თქვენი სახელი",
+    "namePlaceholder": "სახელი...",
+    "lastNameLabel": "თქვენი გვარი",
+    "lastNamePlaceholder": "გვარი...",
+    "emailLabel": "თქვენი ელ.ფოსტის მისამართი",
+    "emailPlaceholder": "ელ.ფოსტა...",
+    "donation": "შეიყვანეთ თანხის რაოდენობა",
+    "donationPlaceholder": "..........",
+    "totalAmount": "ჯამი:"
   },
   "mail": {
     "contactUs": "დაგვიკავშირდი",
@@ -402,5 +414,16 @@
     "addressPlaceholder": "შენი მისამართი...",
     "messageLabel": "შეტყობინება",
     "messagePlaceholder": "დაწერე შეტყობინება..."
+  },
+  "who": {
+    "sectionTitle": "ვინ ვართ ჩვენ",
+    "headingLine1": "ვიხმართ ოცნებებს",
+    "headingLine2": "ვცვლით სიცოცხლეებს",
+    "description1": "ლორემ იპსუმი წარმოადგენს ბეჭდვისა და ტიპოგრაფიის ინდუსტრიის სატესტო ტექსტს",
+    "description2": "ლორემ იპსუმი ინდუსტრიის სტანდარტად იქცა",
+    "totalFundLabel": "სულ შეგროვებული თანხა:",
+    "totalFundValue": "450,896,070$",
+    "totalCasesLabel": "დახმარებული შემთხვევები:",
+    "totalCasesValue": "200+"
   }
 }
