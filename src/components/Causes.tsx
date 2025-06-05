@@ -17,6 +17,7 @@ const StyledSection = styled.section`
   background-color: rgba(255, 243, 240, 1);
   @media (max-width: 1080px) {
     padding: 30px 0;
+    margin-top: 60px;
   }
 `;
 

@@ -10,6 +10,10 @@
     "donateNow": {
       "text1": "Donate",
       "text2": "Now"
+    },
+    "searchBar": {
+      "title": "Search Here",
+      "placeholder": "Search..."
     }
   },
 
